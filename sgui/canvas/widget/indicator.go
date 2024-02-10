@@ -16,9 +16,9 @@ type bitIndicatorState struct {
 }
 
 type BitIndicator struct {
-	size   int
-	state  int // Текущее состояние
-	states []bitIndicatorState
+	size         int
+	currentState int // Текущее состояние
+	states       []bitIndicatorState
 }
 
 func NewIndicator(size int) BitIndicator {
@@ -35,15 +35,19 @@ func (w *BitIndicator) AddState(c color.Color) {
 
 func (w *BitIndicator) SetState(s int) {
 	if s < 0 {
-		w.state = 0
+		w.currentState = 0
+		return
 	}
 
 	if s > len(w.states)-1 {
-		w.state = len(w.states) - 1
+		w.currentState = len(w.states) - 1
+		return
 	}
+
+	w.currentState = s
 
 }
 
 func (w *BitIndicator) Render() *image.RGBA {
-	return w.states[w.state].img
+	return w.states[w.currentState].img
 }

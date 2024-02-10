@@ -14,7 +14,7 @@ func TestDrawCircle(t *testing.T) {
 		c    color.Color
 		size int
 	}{
-		{"red", color.RGBA{255, 0, 0, 255}, 45},
+		{"red", color.RGBA{255, 0, 0, 255}, 100},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

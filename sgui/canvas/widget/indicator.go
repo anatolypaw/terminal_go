@@ -6,56 +6,44 @@ import (
 	"image/color"
 )
 
-type BitIndicator struct {
-	Radius int
-	img    image.RGBA
+// Имеет неограниченное количество переключающихся состояний
+// Состояние представляет собой круг заданного цвета
+// 1) Сначала нужно создать состояние через AddState()
+// 2) Для изменения состояния испольузется SetState()
 
-	rendered bool // Флаг, что виджет был изменен и нужно его отрисовать
-
-	// Логика виджета
-	state bool
+type bitIndicatorState struct {
+	img *image.RGBA
 }
 
-func NewIndicator(radius int) BitIndicator {
-	size := radius * 2
-	r := image.Rect(0, 0, size, size)
-	w := BitIndicator{
-		img: *image.NewRGBA(r),
+type BitIndicator struct {
+	size   int
+	state  int // Текущее состояние
+	states []bitIndicatorState
+}
+
+func NewIndicator(size int) BitIndicator {
+	if size <= 0 {
+		size = 1
 	}
-	return w
+	return BitIndicator{size: size}
+}
+
+func (w *BitIndicator) AddState(c color.Color) {
+	img := painter.DrawCircle(w.size, c)
+	w.states = append(w.states, bitIndicatorState{img: img})
+}
+
+func (w *BitIndicator) SetState(s int) {
+	if s < 0 {
+		w.state = 0
+	}
+
+	if s > len(w.states)-1 {
+		w.state = len(w.states) - 1
+	}
+
 }
 
 func (w *BitIndicator) Render() *image.RGBA {
-	// Если вид индикатора не менялся, возвращаем текущее изображение
-	if w.rendered {
-		return &w.img
-	}
-
-	c := painter.Circle{
-		// B G R
-		FillColor: color.RGBA{255, 0, 0, 255},
-	}
-
-	painter.DrawCircle(&w.img, c)
-
-	w.rendered = true
-	return &w.img
-}
-
-// Логика виджета
-func (w *BitIndicator) TurnOn() {
-	if w.state {
-		return
-	}
-	w.rendered = false
-	w.state = true
-}
-
-// Включить
-func (w *BitIndicator) TurnOff() {
-	if !w.state {
-		return
-	}
-	w.rendered = false
-	w.state = false
+	return w.states[w.state].img
 }

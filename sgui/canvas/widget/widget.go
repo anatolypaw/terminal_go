@@ -1,6 +1,8 @@
 package widget
 
-import "image"
+import (
+	"image"
+)
 
 // Позиция относительно базового объекта
 type Position struct {
@@ -14,9 +16,10 @@ type Size struct {
 }
 
 type Widget interface {
-	// Возвращает текущую позицию виджета
-	Position() Position
-
 	// Отрисовывает виджет
-	Rendewr() *image.RGBA
+	Render() *image.RGBA
+
+	// Обработка нажатия и отпускания
+	Tap()
+	Release()
 }

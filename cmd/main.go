@@ -56,7 +56,7 @@ func main() {
 	var x_done bool
 	var y_done bool
 
-	ind := widget.NewIndicator(100)
+	ind := widget.NewIndicator(5)
 	ind.AddState(color.RGBA{255, 0, 0, 255})
 	ind.AddState(color.RGBA{0, 255, 0, 255})
 	ind.AddState(color.RGBA{0, 0, 255, 255})

@@ -16,7 +16,8 @@ type bitIndicatorState struct {
 }
 
 type BitIndicator struct {
-	size         int
+	size int
+
 	currentState int // Текущее состояние
 	states       []bitIndicatorState
 }
@@ -29,7 +30,13 @@ func NewIndicator(size int) BitIndicator {
 }
 
 func (w *BitIndicator) AddState(c color.Color) {
-	img := painter.DrawCircle(w.size, c)
+	circle := painter.Circle{
+		Radius:      w.size / 2,
+		FillColor:   c,
+		StrokeWidth: 1,
+		StrokeColor: color.RGBA{34, 34, 34, 255},
+	}
+	img := painter.DrawCircle(circle)
 	w.states = append(w.states, bitIndicatorState{img: img})
 }
 

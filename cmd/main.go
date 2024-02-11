@@ -9,7 +9,6 @@ import (
 	"encoding/binary"
 	"fmt"
 	"image"
-	"image/color"
 	"image/draw"
 	_ "image/png"
 	"log"
@@ -37,6 +36,10 @@ type inputEvent struct {
 	value int
 }
 
+func test() {
+	fmt.Println("PRESSED")
+}
+
 func main() {
 	ui, err := sgui.New()
 	if err != nil {
@@ -51,17 +54,8 @@ func main() {
 
 	inputb := make([]byte, 24)
 
-	var x int
-	var y int
-	var x_done bool
-	var y_done bool
+	button := widget.NewButton(100, 30, "test", test)
 
-	ind := widget.NewIndicator(5)
-	ind.AddState(color.RGBA{255, 0, 0, 255})
-	ind.AddState(color.RGBA{0, 255, 0, 255})
-	ind.AddState(color.RGBA{0, 0, 255, 255})
-
-	var state int
 	for {
 		f.Read(inputb)
 		sec := binary.LittleEndian.Uint16(inputb[0:4])
@@ -77,29 +71,17 @@ func main() {
 			value: int(value),
 		}
 
-		if event.typee != TYPE_SYNC && event.typee == TYPE_ABS {
-
-			if event.code == CODE_X {
-				x = (event.value / -5) + 60
-				x_done = true
-			}
-			if event.code == CODE_Y {
-				y = event.value/8 - 480
-				y_done = true
-			}
-
-		}
-
-		if x_done && y_done && event.typee == TYPE_ABS && event.code == CODE_FORCE && event.value > 160 {
+		if event.typee == TYPE_PRESS {
 			t := time.Now()
 
-			draw.Draw(ui.Display, ui.Display.Bounds(), ind.Render(), image.Point{x, y}, draw.Over)
+			if event.value == 1 {
+				button.Tap()
+			} else {
+				button.Release()
+			}
 
+			draw.Draw(ui.Display, ui.Display.Bounds(), button.Render(), image.Point{-400, -200}, draw.Src)
 			fmt.Printf("Elapsed %v\n", time.Since(t))
-			x_done = false
-			y_done = false
-			ind.SetState(state % 6)
-			state++
 		}
 
 	}

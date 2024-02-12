@@ -1,9 +1,10 @@
 package widget
 
 import (
-	"canvas/widget/painter"
 	"image"
 	"image/color"
+	"sgui/entity"
+	"sgui/widget/painter"
 )
 
 // Имеет неограниченное количество переключающихся состояний
@@ -16,9 +17,8 @@ type buttonRender struct {
 }
 
 type button struct {
-	height int
-	width  int
-	label  string
+	size  entity.Size
+	label string
 
 	onClick func()
 
@@ -27,7 +27,7 @@ type button struct {
 	renders      []buttonRender
 }
 
-func NewButton(width int, height int, label string, onClick func()) button {
+func NewButton(width int, height int, label string, onClick func()) *button {
 	if height <= 0 {
 		height = 1
 	}
@@ -58,9 +58,11 @@ func NewButton(width int, height int, label string, onClick func()) button {
 		})},
 	}
 
-	return button{
-		height:  height,
-		width:   width,
+	return &button{
+		size: entity.Size{
+			Width:  width,
+			Height: height,
+		},
 		label:   label,
 		onClick: onClick,
 		renders: renders,
@@ -92,4 +94,8 @@ func (w *button) Click() {
 	if w.onClick != nil {
 		go w.onClick()
 	}
+}
+
+func (w *button) Size() entity.Size {
+	return w.size
 }

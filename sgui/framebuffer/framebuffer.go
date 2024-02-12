@@ -1,11 +1,9 @@
-// This file is subject to a 1-clause BSD license.
-// Its contents can be found in the enclosed LICENSE file.
-
 package framebuffer
 
 import (
 	"errors"
 	"image"
+	"image/draw"
 	"os"
 	"os/signal"
 	"syscall"
@@ -121,9 +119,9 @@ func (fb *Framebuffer) File() *os.File {
 	return fb.file
 }
 
-// Image returns the pixel buffer as a draw.Image instance.
+// Image returns the pixel buffer as a image.Image instance.
 // Returns nil if something went wrong.
-func (fb *Framebuffer) Image() (image.Image, error) {
+func (fb *Framebuffer) Image() (draw.Image, error) {
 	p := fb.mem
 	s := int(fb.Fi.ywrapstep)
 	if s == 0 {
@@ -136,15 +134,10 @@ func (fb *Framebuffer) Image() (image.Image, error) {
 
 }
 
-// Clear clears (zeroes) the framebuffer memory.
+// Очищаем фреймбуффер копированием нулей
 func (c *Framebuffer) Clear() {
 	copy(c.mem, c.zero)
 
-}
-
-// Buffer provides direct access to the entire memory-mapped pixel buffer.
-func (c *Framebuffer) Buffer() []byte {
-	return c.mem
 }
 
 // pollSignals polls for user signals.

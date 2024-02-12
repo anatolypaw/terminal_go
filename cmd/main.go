@@ -4,41 +4,12 @@
 package main
 
 import (
-	"bytes"
-	"canvas/widget"
-	"encoding/binary"
 	"fmt"
-	"image"
-	"image/draw"
-	_ "image/png"
+	"image/color"
 	"log"
-	"os"
-	"os/signal"
 	"sgui"
-	"time"
+	"sgui/widget"
 )
-
-const (
-	TYPE_SYNC  = 0 //
-	TYPE_PRESS = 1 // Нажатие на тач.
-	TYPE_ABS   = 3 // Координаты нажатия
-
-	CODE_FORCE = 24 // усилие нажатия
-	CODE_X     = 0  // х координата
-	CODE_Y     = 1  // y координата
-
-)
-
-type inputEvent struct {
-	time  time.Time
-	typee uint8
-	code  uint8
-	value int
-}
-
-func test() {
-	fmt.Println("PRESSED")
-}
 
 func main() {
 	ui, err := sgui.New()
@@ -46,51 +17,26 @@ func main() {
 		log.Panic(err)
 	}
 
-	f, err := os.Open("/dev/input/event0")
-	if err != nil {
-		panic(err)
-	}
-	defer f.Close()
+	button := widget.NewButton(50, 50, "click me", nil)
+	button2 := widget.NewButton(100, 50, "click me", nil)
 
-	inputb := make([]byte, 24)
+	ind := widget.NewIndicator(30)
+	ind.AddState(color.RGBA{0, 255, 255, 255})
 
-	button := widget.NewButton(100, 30, "test", test)
+	ind2 := widget.NewIndicator(30)
+	ind2.AddState(color.RGBA{0, 255, 0, 255})
 
-	for {
-		f.Read(inputb)
-		sec := binary.LittleEndian.Uint16(inputb[0:4])
-		usec := binary.LittleEndian.Uint16(inputb[4:8])
+	ui.AddWidget(400, 40, button)
+	ui.AddWidget(400, 100, button2)
 
-		var value int16
-		binary.Read(bytes.NewReader(inputb[12:14]), binary.LittleEndian, &value)
+	ui.AddWidget(465, 50, ind)
+	ui.AddWidget(200, 100, ind2)
 
-		event := inputEvent{
-			time:  time.Unix(int64(sec), int64(usec)),
-			typee: uint8(binary.LittleEndian.Uint16(inputb[8:10])),
-			code:  uint8(binary.LittleEndian.Uint16(inputb[10:12])),
-			value: int(value),
-		}
+	ui.Render()
 
-		if event.typee == TYPE_PRESS {
-			t := time.Now()
+	_ = ui
+	_ = button
 
-			if event.value == 1 {
-				button.Tap()
-			} else {
-				button.Release()
-			}
+	fmt.Printf("%#v\n", ui.DisplaySize())
 
-			draw.Draw(ui.Display, ui.Display.Bounds(), button.Render(), image.Point{-400, -200}, draw.Src)
-			fmt.Printf("Elapsed %v\n", time.Since(t))
-		}
-
-	}
-	// wait() // Wait until an exit signal has been received.
-}
-
-// wait polls for exit signals.
-func wait() {
-	signals := make(chan os.Signal, 1)
-	signal.Notify(signals, os.Interrupt, os.Kill)
-	<-signals
 }

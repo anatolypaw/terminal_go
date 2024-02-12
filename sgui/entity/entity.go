@@ -1,4 +1,4 @@
-package widget
+package entity
 
 type Size struct {
 	Width  int

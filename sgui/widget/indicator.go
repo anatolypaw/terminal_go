@@ -1,9 +1,11 @@
 package widget
 
 import (
-	"canvas/widget/painter"
 	"image"
 	"image/color"
+	"log/slog"
+	"sgui/entity"
+	"sgui/widget/painter"
 )
 
 // Имеет неограниченное количество переключающихся состояний
@@ -16,17 +18,16 @@ type bitIndicatorState struct {
 }
 
 type BitIndicator struct {
-	size int
-
+	size         int
 	currentState int // Текущее состояние
 	states       []bitIndicatorState
 }
 
-func NewIndicator(size int) BitIndicator {
+func NewIndicator(size int) *BitIndicator {
 	if size <= 0 {
 		size = 1
 	}
-	return BitIndicator{size: size}
+	return &BitIndicator{size: size}
 }
 
 func (w *BitIndicator) AddState(c color.Color) {
@@ -56,5 +57,22 @@ func (w *BitIndicator) SetState(s int) {
 }
 
 func (w *BitIndicator) Render() *image.RGBA {
+	if w.states == nil {
+		w.AddState(color.RGBA{0, 0, 0, 0})
+		slog.Error("No states for BitIndicator. Created empty state")
+	}
 	return w.states[w.currentState].img
+}
+
+func (w *BitIndicator) Tap() {
+}
+
+func (w *BitIndicator) Release() {
+}
+
+func (w *BitIndicator) Size() entity.Size {
+	return entity.Size{
+		Width:  w.size,
+		Height: w.size,
+	}
 }

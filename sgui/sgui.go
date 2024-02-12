@@ -5,16 +5,41 @@ import (
 	"image"
 	"image/draw"
 	"sgui/entity"
-	"sgui/framebuffer"
 	"time"
 )
 
 type sgui struct {
-	fb      framebuffer.Framebuffer
-	display draw.Image
-	objects []Object
+	display     draw.Image //
+	objects     []Object   // виджеты и их положение на дисплее
+	inputDevice IInput     // Устройство ввода
 }
 
+// Интерфейсы ввода
+type IInput interface {
+	GetEvent() IEvent
+}
+
+type IEvent interface {
+	Position() entity.Position
+}
+
+type Tap struct {
+	Pos entity.Position
+}
+
+func (t Tap) Position() entity.Position {
+	return t.Pos
+}
+
+type Release struct {
+	Pos entity.Position
+}
+
+func (t Release) Position() entity.Position {
+	return t.Pos
+}
+
+// -
 type IWidget interface {
 	Render() *image.RGBA // Отрисовывает виджет
 	Size() entity.Size
@@ -24,34 +49,18 @@ type IWidget interface {
 
 type Object struct {
 	Widget   IWidget
-	Position image.Point
+	Position entity.Position
 }
 
-func New() (sgui, error) {
-	// Инициализируем фреймбуффер
-	fb, err := framebuffer.Open("/dev/fb0")
-	if err != nil {
-		return sgui{}, err
-	}
-
-	// Получаем смапленное изображение
-	display, err := fb.Image()
-	if err != nil {
-		return sgui{}, err
-	}
-
+func New(display draw.Image, input IInput) (sgui, error) {
 	return sgui{
-		fb:      *fb,
-		display: display,
+		display:     display,
+		inputDevice: input,
 	}, nil
 }
 
-func (ui *sgui) Close() {
-	ui.fb.Close()
-}
-
 // Возвращает размер дисплея
-func (ui *sgui) DisplaySize() entity.Size {
+func (ui *sgui) Size() entity.Size {
 	return entity.Size{
 		Width:  ui.display.Bounds().Max.X,
 		Height: ui.display.Bounds().Max.Y,
@@ -62,9 +71,36 @@ func (ui *sgui) DisplaySize() entity.Size {
 func (ui *sgui) AddWidget(x int, y int, w IWidget) {
 	obj := Object{
 		Widget:   w,
-		Position: image.Point{-x, -y},
+		Position: entity.Position{X: -x, Y: -y},
 	}
 	ui.objects = append(ui.objects, obj)
+}
+
+// Обрабатывает события ввода
+// События обрабатываем в горутинах, что бы не пропустить
+// новые приходящие события
+func (ui *sgui) StartInputWorker() {
+	go func() {
+		for {
+			event := ui.inputDevice.GetEvent()
+			switch event.(type) {
+			case Tap:
+				go ui.Tap(event.Position())
+			case Release:
+				go ui.Release()
+			}
+		}
+	}()
+}
+
+// Обработка нажатия
+func (ui *sgui) Tap(pos entity.Position) {
+	fmt.Printf("Tap event. pos %#v\n", pos)
+}
+
+// Обработка отпускания нажатия
+func (ui *sgui) Release() {
+	fmt.Println("Release")
 }
 
 // Отрисовывает объекты на дисплей
@@ -72,13 +108,13 @@ func (ui *sgui) Render() {
 
 	start := time.Now()
 
-	// Отрисовка на дисплей
+	// Отрисовка на дисплей объектов в порядке их добавления
 	for _, o := range ui.objects {
 		draw.Draw(
 			ui.display,
 			ui.display.Bounds(),
 			o.Widget.Render(),
-			o.Position,
+			image.Point{o.Position.X, o.Position.Y},
 			draw.Src)
 	}
 

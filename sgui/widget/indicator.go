@@ -56,6 +56,10 @@ func (w *BitIndicator) SetState(s int) {
 
 }
 
+func (w *BitIndicator) States() int {
+	return len(w.states)
+}
+
 func (w *BitIndicator) Render() *image.RGBA {
 	if w.states == nil {
 		w.AddState(color.RGBA{0, 0, 0, 0})

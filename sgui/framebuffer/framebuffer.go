@@ -6,7 +6,6 @@ package framebuffer
 import (
 	"errors"
 	"image"
-	"image/draw"
 	"os"
 	"os/signal"
 	"syscall"
@@ -124,7 +123,7 @@ func (fb *Framebuffer) File() *os.File {
 
 // Image returns the pixel buffer as a draw.Image instance.
 // Returns nil if something went wrong.
-func (fb *Framebuffer) Image() (draw.Image, error) {
+func (fb *Framebuffer) Image() (image.Image, error) {
 	p := fb.mem
 	s := int(fb.Fi.ywrapstep)
 	if s == 0 {

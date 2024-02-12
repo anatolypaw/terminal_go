@@ -1,27 +1,33 @@
 package sgui
 
 import (
-	"image/draw"
+	"canvas"
 	"sgui/framebuffer"
 )
 
 type sgui struct {
-	Fb      framebuffer.Framebuffer
-	Display draw.Image
+	Fb     framebuffer.Framebuffer
+	Canvas canvas.Canvas
 }
 
 func New() (sgui, error) {
+	// Инициализируем фреймбуффер
 	fb, err := framebuffer.Open("/dev/fb0")
 	if err != nil {
 		return sgui{}, err
 	}
 
-	disp, err := fb.Image()
+	img, err := fb.Image()
 	if err != nil {
 		return sgui{}, err
 	}
 
-	return sgui{Fb: *fb, Display: disp}, nil
+	canvas := canvas.New(&img)
+
+	return sgui{
+		Fb:     *fb,
+		Canvas: canvas,
+	}, nil
 }
 
 func (ui *sgui) Close() {

@@ -58,6 +58,9 @@ func NewButton(width int, height int, label string, onClick func()) *button {
 		})},
 	}
 
+	painter.AddLabel(renders[0].img, width/4, height/2, label)
+	painter.AddLabel(renders[1].img, width/4, height/2, label)
+
 	return &button{
 		size: entity.Size{
 			Width:  width,

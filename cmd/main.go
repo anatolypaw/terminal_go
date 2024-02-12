@@ -41,7 +41,7 @@ func main() {
 	gui.StartInputWorker()
 
 	button := widget.NewButton(50, 50, "click me", nil)
-	button2 := widget.NewButton(100, 50, "ousshhit", nil)
+	button2 := widget.NewButton(200, 300, "ousshhit", nil)
 
 	ind := widget.NewIndicator(30)
 	ind.AddState(color.RGBA{0, 0, 255, 255})
@@ -56,7 +56,7 @@ func main() {
 
 	var i int
 	for {
-		time.Sleep(10 * time.Second)
+		time.Sleep(1 * time.Second)
 		ind.SetState(i % ind.States())
 		gui.Render()
 		i++

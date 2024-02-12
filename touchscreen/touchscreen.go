@@ -111,7 +111,7 @@ start:
 
 	// Возвращаем нажатие
 	// Сработка нажатия только при сильном нажатии на тач
-	if t.ptrig && max_force > 150 {
+	if t.ptrig && max_force > 150 && xcount > 2 && ycount > 2 {
 		t.ptrig = false
 		t.pressed = true
 		return sgui.Tap{

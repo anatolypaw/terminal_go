@@ -94,12 +94,24 @@ func (ui *sgui) StartInputWorker() {
 }
 
 // Обработка нажатия
+// Ищем какой объект попал в точку нажатия и вызываем на нем
+// обработку нажатия
 func (ui *sgui) Tap(pos entity.Position) {
+	for _, o := range ui.objects {
+		o.Widget.Tap()
+	}
+	ui.Render()
 	fmt.Printf("Tap event. pos %#v\n", pos)
 }
 
 // Обработка отпускания нажатия
+// Ищем какой объект попал в точку нажатия и вызываем на нем
+// обработку  отжатия
 func (ui *sgui) Release() {
+	for _, o := range ui.objects {
+		o.Widget.Release()
+	}
+	ui.Render()
 	fmt.Println("Release")
 }
 

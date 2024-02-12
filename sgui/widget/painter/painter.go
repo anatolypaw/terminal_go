@@ -5,6 +5,8 @@ import (
 	"image/color"
 
 	"github.com/srwiley/rasterx"
+	"golang.org/x/image/font"
+	"golang.org/x/image/font/basicfont"
 	"golang.org/x/image/math/fixed"
 )
 
@@ -122,4 +124,18 @@ func DrawRectangle(r Rectangle) *image.RGBA {
 
 	return img
 
+}
+
+// Добавляет текст на изображение
+func AddLabel(img *image.RGBA, x, y int, label string) {
+	col := color.RGBA{0, 0, 0, 255}
+	point := fixed.Point26_6{fixed.I(x), fixed.I(y)}
+
+	d := &font.Drawer{
+		Dst:  img,
+		Src:  image.NewUniform(col),
+		Face: basicfont.Face7x13,
+		Dot:  point,
+	}
+	d.DrawString(label)
 }

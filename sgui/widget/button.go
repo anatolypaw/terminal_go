@@ -3,8 +3,10 @@ package widget
 import (
 	"image"
 	"image/color"
+	"image/draw"
 	"sgui/entity"
 	"sgui/widget/painter"
+	"sgui/widget/painter/text2img"
 )
 
 // Имеет неограниченное количество переключающихся состояний
@@ -12,68 +14,90 @@ import (
 // 1) Сначала нужно создать состояние через AddState()
 // 2) Для изменения состояния испольузется SetState()
 
-type buttonRender struct {
-	img *image.RGBA
-}
-
 type button struct {
-	size  entity.Size
-	label string
-
-	onClick func()
-
+	size         entity.Size
+	onClick      func()
 	currentState int  // Текущее состояние
 	tapped       bool // Флаг, что кнопка нажата
-	renders      []buttonRender
+
+	releasedRender *image.RGBA
+	pressedRenser  *image.RGBA
 }
 
-func NewButton(width int, height int, label string, onClick func()) *button {
-	if height <= 0 {
-		height = 1
+type Button struct {
+	Size      entity.Size
+	Onclick   func()
+	Label     string
+	LabelSize float64
+}
+
+func NewButton(b Button) *button {
+	if b.Size.Height <= 0 {
+		b.Size.Height = 1
 	}
 
-	if width <= 0 {
-		width = 1
+	if b.Size.Width <= 0 {
+		b.Size.Width = 1
 	}
 
 	// Состояния кнопки.
 	// 0 - кнопка отжата
 	// 1 - кнопка нажата
-	renders := []buttonRender{
-		{img: painter.DrawRectangle(painter.Rectangle{
-			Width:        width,
-			Height:       height,
-			FillColor:    color.RGBA{94, 94, 94, 255},
-			CornerRadius: 8,
-			StrokeWidth:  1,
-			StrokeColor:  color.RGBA{34, 34, 34, 255},
-		})},
-		{img: painter.DrawRectangle(painter.Rectangle{
-			Width:        width,
-			Height:       height,
-			FillColor:    color.RGBA{118, 118, 118, 255},
-			CornerRadius: 8,
-			StrokeWidth:  1,
-			StrokeColor:  color.RGBA{34, 34, 34, 255},
-		})},
+	releasedRender := painter.DrawRectangle(painter.Rectangle{
+		Width:        b.Size.Width,
+		Height:       b.Size.Height,
+		FillColor:    color.RGBA{94, 94, 94, 255},
+		CornerRadius: 8,
+		StrokeWidth:  1,
+		StrokeColor:  color.RGBA{34, 34, 34, 255},
+	})
+	pressedRender := painter.DrawRectangle(painter.Rectangle{
+		Width:        b.Size.Width,
+		Height:       b.Size.Height,
+		FillColor:    color.RGBA{118, 118, 118, 255},
+		CornerRadius: 8,
+		StrokeWidth:  1,
+		StrokeColor:  color.RGBA{34, 34, 34, 255},
+	})
+
+	// Получаем изображение текста и вычисляем его расположение
+	// для размещения в середине кнопки
+	textimg := text2img.Text2img(b.Label, b.LabelSize)
+	textMidPos := image.Point{
+		X: -(b.Size.Width - textimg.Rect.Dx()) / 2,
+		Y: -(b.Size.Height - textimg.Rect.Dy()) / 2,
 	}
 
-	painter.AddLabel(renders[0].img, width/4, height/2, label)
-	painter.AddLabel(renders[1].img, width/4, height/2, label)
+	// Наносим текст на оба состояния кнопки
+	draw.Draw(releasedRender,
+		releasedRender.Bounds(),
+		textimg,
+		textMidPos,
+		draw.Over)
+
+	draw.Draw(pressedRender,
+		pressedRender.Bounds(),
+		textimg,
+		textMidPos,
+		draw.Over)
 
 	return &button{
 		size: entity.Size{
-			Width:  width,
-			Height: height,
+			Width:  b.Size.Width,
+			Height: b.Size.Height,
 		},
-		label:   label,
-		onClick: onClick,
-		renders: renders,
+		onClick:        b.Onclick,
+		releasedRender: releasedRender,
+		pressedRenser:  pressedRender,
 	}
 }
 
 func (w *button) Render() *image.RGBA {
-	return w.renders[w.currentState].img
+	if w.tapped {
+		return w.pressedRenser
+	} else {
+		return w.releasedRender
+	}
 }
 
 // Вызвать при нажатии на кнопку

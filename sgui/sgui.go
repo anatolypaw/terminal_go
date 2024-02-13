@@ -4,14 +4,16 @@ import (
 	"fmt"
 	"image"
 	"image/draw"
+	"log"
 	"sgui/entity"
 	"time"
 )
 
 type sgui struct {
-	display     draw.Image //
-	objects     []Object   // виджеты и их положение на дисплее
-	inputDevice IInput     // Устройство ввода
+	display draw.Image //
+
+	objects     []Object // виджеты и их положение на дисплее
+	inputDevice IInput   // Устройство ввода
 }
 
 // Интерфейсы ввода
@@ -130,6 +132,6 @@ func (ui *sgui) Render() {
 			draw.Src)
 	}
 
-	fmt.Printf("Rendering  %v\n", time.Since(start))
+	log.Printf("Rendering  %v\n", time.Since(start))
 
 }

@@ -4,14 +4,20 @@
 package main
 
 import (
+	"fmt"
 	"image/color"
 	"log"
 	"sgui"
+	"sgui/entity"
 	"sgui/widget"
 	"terminal/framebuffer"
 	"terminal/touchscreen"
 	"time"
 )
+
+func print(text string) {
+	fmt.Println(text)
+}
 
 func main() {
 	// Инициализируем фреймбуффер
@@ -40,26 +46,41 @@ func main() {
 	}
 	gui.StartInputWorker()
 
-	button := widget.NewButton(50, 50, "click me", nil)
-	button2 := widget.NewButton(200, 300, "ousshhit", nil)
-
 	ind := widget.NewIndicator(30)
 	ind.AddState(color.RGBA{0, 0, 255, 255})
-	ind.AddState(color.RGBA{255, 0, 0, 255})
-	ind.AddState(color.RGBA{255, 255, 0, 255})
-	ind.AddState(color.RGBA{255, 0, 0, 255})
+	ind.AddState(color.RGBA{0, 0, 0, 255})
+	button := widget.NewButton(
+		widget.Button{
+			Size:      entity.Size{Width: 200, Height: 70},
+			Onclick:   func() { log.Print("Событие кнопки 1") },
+			Label:     "КН - 1",
+			LabelSize: 50,
+		},
+	)
 
-	gui.AddWidget(400, 40, button)
-	gui.AddWidget(400, 100, button2)
+	var i int
+
+	button2 := widget.NewButton(
+		widget.Button{
+			Size: entity.Size{Width: 60, Height: 30},
+			Onclick: func() {
+				log.Print("Событие кнопки 2")
+				ind.SetState(i % ind.States())
+				i++
+				gui.Render()
+			},
+			Label:     "КН - 2",
+			LabelSize: 10,
+		},
+	)
+
+	gui.AddWidget(100, 100, button)
+	gui.AddWidget(700, 400, button2)
 
 	gui.AddWidget(465, 50, ind)
 
-	var i int
 	for {
-		time.Sleep(1 * time.Second)
-		ind.SetState(i % ind.States())
-		gui.Render()
-		i++
+		time.Sleep(5 * time.Second)
 	}
 
 }

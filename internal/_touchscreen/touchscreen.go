@@ -4,8 +4,6 @@ import (
 	"bytes"
 	"encoding/binary"
 	"os"
-	"sgui"
-	"sgui/entity"
 )
 
 const (
@@ -26,6 +24,9 @@ type Touchscreen struct {
 	ptrig   bool // триггер нажатия
 }
 
+type IEvent interface {
+}
+
 func New(path string) (Touchscreen, error) {
 	f, err := os.Open(path)
 	if err != nil {
@@ -41,7 +42,7 @@ func (t *Touchscreen) Close() {
 
 // Возвращает событие нажатия или отпускания кнопки
 // Событие смены координаты не реализовано
-func (t *Touchscreen) GetEvent() sgui.IEvent {
+func (t *Touchscreen) GetEvent() IEvent {
 
 	var event uint8 // Тип события
 	var code uint8  // Код события

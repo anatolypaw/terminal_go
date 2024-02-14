@@ -1,5 +1,6 @@
-github.com/disintegration/imaging v1.6.2 h1:w1LecBlG2Lnp8B3jk5zSuNqd7b4DXhcjwek1ei82L+c=
-github.com/disintegration/imaging v1.6.2/go.mod h1:44/5580QXChDfwIclfc/PCwrr44amcmDAg8hxG0Ewe4=
-golang.org/x/image v0.0.0-20191009234506-e7c1f5e7dbb8 h1:hVwzHzIUGRjiF7EcUjqNxk3NCfkPxbDKRdnNE1Rpg0U=
-golang.org/x/image v0.0.0-20191009234506-e7c1f5e7dbb8/go.mod h1:FeLwcggjj3mMvU+oOTbSwawSJRM1uh48EjtB4UJZlP0=
-golang.org/x/text v0.3.0/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
+github.com/anatolypaw/sgui v0.0.0-20240213160547-719433c9a5b3 h1:nqbwo218t+2CYf0SSJTJICgFCMG5x1ZI1k7qfqLsPOk=
+github.com/anatolypaw/sgui v0.0.0-20240213160547-719433c9a5b3/go.mod h1:NnD6yNOhHjEnTiEpQJ6yuq/pytyCE+E4iHdWHG8q4X8=
+github.com/anatolypaw/sgui v0.0.0-20240214064331-ab96f26d6646 h1:oZe/OzTvEY2oENyfB8hzfyPK5+f8ynCQIfu2xkwhFx8=
+github.com/anatolypaw/sgui v0.0.0-20240214064331-ab96f26d6646/go.mod h1:NnD6yNOhHjEnTiEpQJ6yuq/pytyCE+E4iHdWHG8q4X8=
+github.com/anatolypaw/sgui v0.1.0 h1:cBWynp4R0hHdxZ6yQX95yPHsPprpkyS3Emw/ra5XsYw=
+github.com/anatolypaw/sgui v0.1.0/go.mod h1:NnD6yNOhHjEnTiEpQJ6yuq/pytyCE+E4iHdWHG8q4X8=

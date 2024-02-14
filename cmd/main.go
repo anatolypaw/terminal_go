@@ -44,10 +44,11 @@ func main() {
 	backcolor := color.RGBA{50, 50, 50, 255}
 	gui.SetBackground(backcolor)
 
+	// Заполняем весь холст кнопками и индикаторами
+	// При нажатии на кнопку меняется состояние индикатора
 	for i := 0; i < 5; i++ {
 		for n := 0; n < 10; n++ {
 			// Создаем виджеты
-
 			ind := widget.NewIndicator(20, backcolor)
 			ind.AddState(color.RGBA{0, 0, 255, 255})
 			ind.AddState(color.RGBA{0, 255, 0, 255})
@@ -67,7 +68,7 @@ func main() {
 				},
 				backcolor)
 
-			// Добавляем виджеты
+			// Добавляем виджеты на холст
 			gui.AddWidget(10+i*160, 10+(n*47), button)
 			gui.AddWidget(130+i*160, 20+(n*47), ind)
 

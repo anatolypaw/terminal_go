@@ -37,7 +37,6 @@ func main() {
 	defer touch.Close()
 
 	// Создаем GUI
-	// Создаем гуй
 	gui, err := sgui.New(display, &touch)
 	if err != nil {
 		panic(err)

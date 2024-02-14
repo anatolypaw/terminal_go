@@ -4,3 +4,11 @@ github.com/anatolypaw/sgui v0.0.0-20240214064331-ab96f26d6646 h1:oZe/OzTvEY2oENy
 github.com/anatolypaw/sgui v0.0.0-20240214064331-ab96f26d6646/go.mod h1:NnD6yNOhHjEnTiEpQJ6yuq/pytyCE+E4iHdWHG8q4X8=
 github.com/anatolypaw/sgui v0.1.0 h1:cBWynp4R0hHdxZ6yQX95yPHsPprpkyS3Emw/ra5XsYw=
 github.com/anatolypaw/sgui v0.1.0/go.mod h1:NnD6yNOhHjEnTiEpQJ6yuq/pytyCE+E4iHdWHG8q4X8=
+github.com/anatolypaw/sgui v0.1.1 h1:C9hOzy4DZWmcb+ANNeOSFhQ3Jn+z7TrNKCkFopLcAYg=
+github.com/anatolypaw/sgui v0.1.1/go.mod h1:NnD6yNOhHjEnTiEpQJ6yuq/pytyCE+E4iHdWHG8q4X8=
+github.com/srwiley/rasterx v0.0.0-20220730225603-2ab79fcdd4ef h1:Ch6Q+AZUxDBCVqdkI8FSpFyZDtCVBc2VmejdNrm5rRQ=
+github.com/srwiley/rasterx v0.0.0-20220730225603-2ab79fcdd4ef/go.mod h1:nXTWP6+gD5+LUJ8krVhhoeHjvHTutPxMYl5SvkcnJNE=
+golang.org/x/image v0.15.0 h1:kOELfmgrmJlw4Cdb7g/QGuB3CvDrXbqEIww/pNtNBm8=
+golang.org/x/image v0.15.0/go.mod h1:HUYqC05R2ZcZ3ejNQsIHQDQiwWM4JBqmm6MKANTp4LE=
+golang.org/x/text v0.14.0 h1:ScX5w1eTa3QqT8oi6+ziP7dTV1S2+ALU0bI+0zXKWiQ=
+golang.org/x/text v0.14.0/go.mod h1:18ZOQIKpY8NJVqYksKHtTdi31H5itFRjB5/qKTNYzSU=

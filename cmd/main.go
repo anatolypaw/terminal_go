@@ -4,80 +4,80 @@
 package main
 
 import (
-	"fmt"
+	"image/color"
+	"log"
+	"terminal/internal/framebuffer"
+	"terminal/internal/touchscreen"
+	"time"
 
 	"github.com/anatolypaw/sgui"
+	"github.com/anatolypaw/sgui/entity"
+	"github.com/anatolypaw/sgui/widget"
 )
 
 func main() {
+	// Инициализируем фреймбуффер
+	fb, err := framebuffer.Open("/dev/fb0")
+	if err != nil {
+		log.Panic(err)
+	}
 
-	a := sgui.Sgui{}
-	_ = a
+	// Получаем смапленное в память фреймбуффера изображение
+	display, err := fb.Image()
+	if err != nil {
+		log.Panic(err)
+	}
 
-	fmt.Println("hello")
-	/*
-		// Инициализируем фреймбуффер
-		fb, err := framebuffer.Open("/dev/fb0")
-		if err != nil {
-			log.Panic(err)
-		}
+	// Получаем устройство ввода
+	touch, err := touchscreen.New("/dev/input/event0")
+	if err != nil {
+		log.Panic(err)
+	}
+	defer touch.Close()
 
-		// Получаем смапленное в память фреймбуффера изображение
-		display, err := fb.Image()
-		if err != nil {
-			log.Panic(err)
-		}
+	// Создаем GUI
+	gui, err := sgui.New(display, &touch)
+	if err != nil {
+		log.Panic(err)
+	}
 
-			// Получаем устройство ввода
-			touch, err := touchscreen.New("/dev/input/event0")
-			if err != nil {
-				log.Panic(err)
-			}
-			defer touch.Close()
+	gui.StartInputEventHandler()
 
-			// Создаем GUI
-			gui, err := sgui.New(display, &touch)
-			if err != nil {
-				log.Panic(err)
-			}
-			gui.StartInputWorker()
+	ind := widget.NewIndicator(30)
+	ind.AddState(color.RGBA{0, 0, 255, 255})
+	ind.AddState(color.RGBA{0, 0, 0, 255})
+	button := widget.NewButton(
+		widget.Button{
+			Size:      entity.Size{Width: 200, Height: 70},
+			Onclick:   func() { log.Print("Событие кнопки 1") },
+			Label:     "КН - 1",
+			LabelSize: 50,
+		},
+	)
 
-			ind := widget.NewIndicator(30)
-			ind.AddState(color.RGBA{0, 0, 255, 255})
-			ind.AddState(color.RGBA{0, 0, 0, 255})
-			button := widget.NewButton(
-				widget.Button{
-					Size:      entity.Size{Width: 200, Height: 70},
-					Onclick:   func() { log.Print("Событие кнопки 1") },
-					Label:     "КН - 1",
-					LabelSize: 50,
-				},
-			)
+	var i int
 
-			var i int
+	button2 := widget.NewButton(
+		widget.Button{
+			Size: entity.Size{Width: 60, Height: 30},
+			Onclick: func() {
+				log.Print("Событие кнопки 2")
+				ind.SetState(i % ind.States())
+				i++
+				gui.Render()
+			},
+			Label:     "КН - 2",
+			LabelSize: 10,
+		},
+	)
 
-			button2 := widget.NewButton(
-				widget.Button{
-					Size: entity.Size{Width: 60, Height: 30},
-					Onclick: func() {
-						log.Print("Событие кнопки 2")
-						ind.SetState(i % ind.States())
-						i++
-						gui.Render()
-					},
-					Label:     "КН - 2",
-					LabelSize: 10,
-				},
-			)
+	gui.AddWidget(100, 100, button)
+	gui.AddWidget(700, 400, button2)
 
-			gui.AddWidget(100, 100, button)
-			gui.AddWidget(700, 400, button2)
+	gui.AddWidget(465, 50, ind)
 
-			gui.AddWidget(465, 50, ind)
-
-			for {
-				time.Sleep(5 * time.Second)
-			}
-	*/
+	for {
+		time.Sleep(5 * time.Second)
+	}
 
 }

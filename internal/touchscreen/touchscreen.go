@@ -111,8 +111,10 @@ func (t *Touchscreen) GetEvent() sgui.IEvent {
 		// Событие отпускания.
 		if event == TYPE_PRESS && value == 0 && t.pressed {
 			t.pressed = false
+			//		log.Println("Touchscreen Release", x, y)
+			scaled := scale(image.Point{X: x, Y: y})
 			return sgui.EventRelease{
-				Pos: image.Point{X: x, Y: y},
+				Pos: scaled,
 			}
 		}
 
@@ -121,11 +123,44 @@ func (t *Touchscreen) GetEvent() sgui.IEvent {
 		if t.ptrig && max_force > 150 && xcount > 2 && ycount > 2 {
 			t.ptrig = false
 			t.pressed = true
+			scaled := scale(image.Point{X: x, Y: y})
+			log.Printf("Touch %v", scaled)
 			return sgui.EventTap{
-				Pos: image.Point{X: x, Y: y},
+				Pos: scaled,
 			}
 		}
 
 	}
 
+}
+
+// min 3692
+// max 348
+// Приводит координату в соответсвии с калибровкой
+func scale(point image.Point) image.Point {
+	var x float32
+	var y float32
+
+	x = float32(point.X) - 150
+	if x < 0 {
+		x = 0
+	} else {
+		x = x / 4.8125
+	}
+
+	y = float32(point.Y)
+	diap := float32(3692 - 348)
+	coef := diap / 480
+
+	// убираем смещение
+	y = y - 348
+
+	// инвертируем показания
+	y = diap - y
+	if y < 0 {
+		y = 0
+	} else {
+		y = y / coef
+	}
+	return image.Point{int(x), int(y)}
 }

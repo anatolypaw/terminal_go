@@ -4,7 +4,6 @@
 package main
 
 import (
-	"fmt"
 	"image"
 	"image/color"
 	"log"
@@ -41,39 +40,120 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	backcolor := color.RGBA{50, 50, 50, 255}
-	gui.SetBackground(backcolor)
 
-	// Заполняем весь холст кнопками и индикаторами
-	// При нажатии на кнопку меняется состояние индикатора
-	for i := 0; i < 5; i++ {
-		for n := 0; n < 10; n++ {
-			// Создаем виджеты
-			ind := widget.NewIndicator(20, backcolor)
-			ind.AddState(color.RGBA{0, 0, 255, 255})
-			ind.AddState(color.RGBA{0, 255, 0, 255})
-
-			button := widget.NewButton(
-				widget.ButtonParam{
-					Size: image.Point{X: 110, Y: 40},
-					Onclick: func() {
-						if ind.GetState() == 0 {
-							ind.SetState(1)
-						} else {
-							ind.SetState(0)
-						}
-					},
-					Label:     fmt.Sprintf("Button %v", n+(i*10)),
-					LabelSize: 20,
-				},
-				backcolor)
-
-			// Добавляем виджеты на холст
-			gui.AddWidget(10+i*160, 10+(n*47), button)
-			gui.AddWidget(130+i*160, 20+(n*47), ind)
-
-		}
+	// Создаем тему
+	theme := widget.ColorTheme{
+		BackgroundColor: color.RGBA{255, 255, 255, 255},
+		MainColor:       color.RGBA{200, 200, 200, 255},
+		SecondColor:     color.RGBA{180, 180, 180, 255},
+		StrokeColor:     color.RGBA{60, 60, 60, 255},
+		TextColor:       color.Black,
+		StrokeWidth:     2,
+		CornerRadius:    10,
 	}
+
+	// Создаем экраны
+	mainScreen := sgui.NewScreen(gui.SizeDisplay())
+	mainScreen.SetBackground(theme.BackgroundColor)
+
+	secondScreen := sgui.NewScreen(gui.SizeDisplay())
+	secondScreen.SetBackground(theme.BackgroundColor)
+
+	// Создаем виджеты на основной экран
+	ind := widget.NewIndicator(20, theme)
+	ind.AddState(color.RGBA{255, 0, 0, 255})
+	ind.AddState(color.RGBA{0, 255, 0, 255})
+
+	button2 := widget.NewButton(
+		widget.ButtonParam{
+			Size: image.Point{X: 110, Y: 40},
+			Onclick: func() {
+				if ind.GetState() == 0 {
+					ind.SetState(1)
+				} else {
+					ind.SetState(0)
+				}
+			},
+			Label:           "Button 2",
+			LabelSize:       20,
+			ReleaseColor:    theme.MainColor,
+			PressColor:      theme.SecondColor,
+			BackgroundColor: theme.BackgroundColor,
+			CornerRadius:    theme.CornerRadius,
+			StrokeWidth:     theme.StrokeWidth,
+			StrokeColor:     theme.StrokeColor,
+			TextColor:       theme.TextColor,
+		},
+	)
+
+	button1 := widget.NewButton(
+		widget.ButtonParam{
+			Size: image.Point{X: 110, Y: 40},
+			Onclick: func() {
+				if button2.Hidden() {
+					button2.Show()
+				} else {
+					button2.Hide()
+				}
+			},
+			Label:           "Hide",
+			LabelSize:       20,
+			ReleaseColor:    theme.MainColor,
+			PressColor:      theme.SecondColor,
+			BackgroundColor: theme.BackgroundColor,
+			CornerRadius:    theme.CornerRadius,
+			StrokeWidth:     theme.StrokeWidth,
+			StrokeColor:     theme.StrokeColor,
+			TextColor:       theme.TextColor,
+		},
+	)
+
+	buttonSetSecondScreen := widget.NewButton(
+		widget.ButtonParam{
+			Size: image.Point{X: 110, Y: 40},
+			Onclick: func() {
+				gui.SetScreen(&secondScreen)
+			},
+			Label:           "2 экран",
+			LabelSize:       20,
+			ReleaseColor:    theme.MainColor,
+			PressColor:      theme.SecondColor,
+			BackgroundColor: theme.BackgroundColor,
+			CornerRadius:    theme.CornerRadius,
+			StrokeWidth:     theme.StrokeWidth,
+			StrokeColor:     theme.StrokeColor,
+			TextColor:       theme.TextColor,
+		},
+	)
+
+	buttonSetMainScreen := widget.NewButton(
+		widget.ButtonParam{
+			Size: image.Point{X: 110, Y: 40},
+			Onclick: func() {
+				gui.SetScreen(&mainScreen)
+			},
+			Label:           "1 экран",
+			LabelSize:       20,
+			ReleaseColor:    theme.MainColor,
+			PressColor:      theme.SecondColor,
+			BackgroundColor: theme.BackgroundColor,
+			CornerRadius:    theme.CornerRadius,
+			StrokeWidth:     theme.StrokeWidth,
+			StrokeColor:     theme.StrokeColor,
+			TextColor:       theme.TextColor,
+		},
+	)
+
+	// Добавляем виджеты на холст
+	mainScreen.AddWidget(10, 10, button1)
+	mainScreen.AddWidget(10, 60, button2)
+	mainScreen.AddWidget(130, 70, ind)
+	mainScreen.AddWidget(10, 200, buttonSetSecondScreen)
+
+	secondScreen.AddWidget(10, 10, buttonSetMainScreen)
+
+	// Устанавливаем активный экран
+	gui.SetScreen(&mainScreen)
 
 	gui.StartInputEventHandler()
 
@@ -83,7 +163,7 @@ func main() {
 		gui.Render()
 		//log.Printf("Rendering  %v\n", time.Since(start))
 
-		time.Sleep(100 * time.Millisecond)
+		time.Sleep(50 * time.Millisecond)
 	}
 
 }

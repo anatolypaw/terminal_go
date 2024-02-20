@@ -1,41 +1,35 @@
-<mxfile host="app.diagrams.net" modified="2024-02-17T14:19:02.750Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="9ivAQI3vXq8oA3wg_qOg" version="23.1.5" type="device">
+<mxfile host="app.diagrams.net" modified="2024-02-19T13:45:18.635Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="i2v5zrZilaMYMz65vEdf" version="23.1.5" type="device">
   <diagram name="Page-1" id="tmifsBOv8ixKvkTQ0eV7">
-    <mxGraphModel dx="1314" dy="1765" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="800" pageHeight="900" math="0" shadow="0">
+    <mxGraphModel dx="1676" dy="1477" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="800" pageHeight="900" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="ldNFHoCPbJhq2-DnN9eL-1" value="" style="rounded=0;whiteSpace=wrap;html=1;aspect=fixed;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" parent="1" vertex="1">
           <mxGeometry x="40" y="40" width="800" height="480" as="geometry" />
         </mxCell>
-        <mxCell id="ldNFHoCPbJhq2-DnN9eL-2" value="Чтение камерой" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+        <mxCell id="ldNFHoCPbJhq2-DnN9eL-2" value="Чтение камерой" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="40" y="10" width="120" height="30" as="geometry" />
         </mxCell>
         <mxCell id="ldNFHoCPbJhq2-DnN9eL-3" value="Молоко 3,5 % 1 л" style="rounded=0;whiteSpace=wrap;html=1;fontSize=27;fillColor=#FF6666;strokeColor=#b85450;" parent="1" vertex="1">
-          <mxGeometry x="55" y="60" width="310" height="69" as="geometry" />
+          <mxGeometry x="60" y="151" width="310" height="60" as="geometry" />
         </mxCell>
         <mxCell id="ldNFHoCPbJhq2-DnN9eL-4" value="..." style="rounded=1;whiteSpace=wrap;html=1;fontSize=47;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
-          <mxGeometry x="373" y="60" width="72" height="69" as="geometry" />
+          <mxGeometry x="379.5" y="151" width="72" height="60" as="geometry" />
         </mxCell>
         <mxCell id="ldNFHoCPbJhq2-DnN9eL-5" value="17.02.2024" style="rounded=0;whiteSpace=wrap;html=1;fontSize=38;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
-          <mxGeometry x="135" y="257" width="225" height="60" as="geometry" />
+          <mxGeometry x="137" y="228" width="233" height="71" as="geometry" />
         </mxCell>
         <mxCell id="ldNFHoCPbJhq2-DnN9eL-6" value="&amp;gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=47;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
-          <mxGeometry x="370" y="257" width="75" height="60" as="geometry" />
+          <mxGeometry x="378" y="228" width="75" height="71" as="geometry" />
         </mxCell>
         <mxCell id="ldNFHoCPbJhq2-DnN9eL-7" value="&amp;lt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=47;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
-          <mxGeometry x="55" y="257" width="70" height="60" as="geometry" />
+          <mxGeometry x="60" y="228" width="70" height="71" as="geometry" />
         </mxCell>
-        <mxCell id="ldNFHoCPbJhq2-DnN9eL-8" value="ПРОИЗВОДСТВО" style="rounded=1;whiteSpace=wrap;html=1;fontSize=21;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="195" y="159" width="250" height="67" as="geometry" />
-        </mxCell>
-        <mxCell id="ldNFHoCPbJhq2-DnN9eL-9" value="БРАК" style="rounded=1;whiteSpace=wrap;html=1;fontSize=21;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
-          <mxGeometry x="55" y="159" width="125" height="67" as="geometry" />
-        </mxCell>
-        <mxCell id="ldNFHoCPbJhq2-DnN9eL-10" value="РАБОТА" style="rounded=1;whiteSpace=wrap;html=1;fontSize=21;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
-          <mxGeometry x="55" y="348" width="250" height="70" as="geometry" />
+        <mxCell id="ldNFHoCPbJhq2-DnN9eL-8" value="ПРОИЗВОДСТВО" style="rounded=0;whiteSpace=wrap;html=1;fontSize=21;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="60" y="70" width="310" height="61" as="geometry" />
         </mxCell>
         <mxCell id="ldNFHoCPbJhq2-DnN9eL-12" value="" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.lock_protected;" parent="1" vertex="1">
-          <mxGeometry x="812" y="-27" width="28" height="37" as="geometry" />
+          <mxGeometry x="-90" y="191" width="28" height="37" as="geometry" />
         </mxCell>
         <mxCell id="ldNFHoCPbJhq2-DnN9eL-16" value="A1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" parent="1" vertex="1">
           <mxGeometry x="40" y="490" width="110" height="30" as="geometry" />
@@ -47,16 +41,388 @@
           <mxGeometry x="281" y="490" width="80" height="30" as="geometry" />
         </mxCell>
         <mxCell id="ldNFHoCPbJhq2-DnN9eL-19" value="010.000.004.020:3040" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" parent="1" vertex="1">
-          <mxGeometry x="360" y="490" width="155" height="30" as="geometry" />
+          <mxGeometry x="362" y="490" width="155" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="ldNFHoCPbJhq2-DnN9eL-20" value="20635" style="rounded=0;whiteSpace=wrap;html=1;fontSize=100;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="480" y="60" width="340" height="90" as="geometry" />
+        <mxCell id="ldNFHoCPbJhq2-DnN9eL-20" value="20635" style="rounded=0;whiteSpace=wrap;html=1;fontSize=100;" parent="1" vertex="1">
+          <mxGeometry x="480" y="159" width="340" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="ldNFHoCPbJhq2-DnN9eL-21" value="105" style="rounded=0;whiteSpace=wrap;html=1;fontSize=50;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
-          <mxGeometry x="650" y="159" width="170" height="70" as="geometry" />
+        <mxCell id="ldNFHoCPbJhq2-DnN9eL-21" value="105" style="rounded=0;whiteSpace=wrap;html=1;fontSize=50;" parent="1" vertex="1">
+          <mxGeometry x="480" y="288" width="160" height="51" as="geometry" />
         </mxCell>
-        <mxCell id="ldNFHoCPbJhq2-DnN9eL-22" value="20635" style="rounded=0;whiteSpace=wrap;html=1;fontSize=50;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
-          <mxGeometry x="480" y="159" width="160" height="70" as="geometry" />
+        <mxCell id="ldNFHoCPbJhq2-DnN9eL-22" value="503" style="rounded=0;whiteSpace=wrap;html=1;fontSize=50;" parent="1" vertex="1">
+          <mxGeometry x="650" y="288" width="170" height="51" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-2" value="Произведено на этой линиии, шт:" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry x="480" y="129" width="340" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-3" value="Коробок:" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry x="480" y="258" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-4" value="Брак, шт:" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry x="660" y="258" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-5" value="Произведено всего в партии:" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry x="480" y="356" width="340" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-6" value="105" style="rounded=0;whiteSpace=wrap;html=1;fontSize=50;" vertex="1" parent="1">
+          <mxGeometry x="480" y="409" width="160" height="51" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-7" value="Коробок:" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry x="480" y="379" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-8" value="2100" style="rounded=0;whiteSpace=wrap;html=1;fontSize=50;" vertex="1" parent="1">
+          <mxGeometry x="650" y="409" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-9" value="шт:" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry x="655" y="379" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-11" value="010.000.004.020" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="560" y="490" width="115" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-12" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="514" y="495" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-13" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="675" y="495" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-14" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="740" y="495" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-15" value="IO" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="710" y="490" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-17" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="805" y="495" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-18" value="HR" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="775" y="490" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-19" value="Добавлен" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="480" y="70" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-20" value="Повторный" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="480" y="100" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-23" value="" style="rounded=0;whiteSpace=wrap;html=1;aspect=fixed;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="560" width="800" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-24" value="Выбор режима" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="281" y="570" width="299" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-27" value="..." style="rounded=1;whiteSpace=wrap;html=1;fontSize=47;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="378" y="71" width="72" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-30" value="" style="rounded=0;whiteSpace=wrap;html=1;aspect=fixed;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" vertex="1" parent="1">
+          <mxGeometry x="880" y="40" width="800" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-31" value="" style="rounded=0;whiteSpace=wrap;html=1;aspect=fixed;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" vertex="1" parent="1">
+          <mxGeometry x="1720" y="40" width="800" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-33" value="Нанесение принтером" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="880" y="10" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-40" value="РАБОТА" style="rounded=1;whiteSpace=wrap;html=1;fontSize=21;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="409" width="210" height="69" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-41" value="А4" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="880" y="490" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-42" value="010.000.004.020" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="1001" y="490" width="115" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-43" value="v0.01.01" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="1121" y="490" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-44" value="010.000.004.020:3040" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="1202" y="490" width="155" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-45" value="20635" style="rounded=0;whiteSpace=wrap;html=1;fontSize=100;" vertex="1" parent="1">
+          <mxGeometry x="1320" y="70" width="340" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-46" value="105" style="rounded=0;whiteSpace=wrap;html=1;fontSize=50;" vertex="1" parent="1">
+          <mxGeometry x="1320" y="199" width="160" height="51" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-47" value="503" style="rounded=0;whiteSpace=wrap;html=1;fontSize=50;" vertex="1" parent="1">
+          <mxGeometry x="1490" y="199" width="170" height="51" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-48" value="Произведено на этой линиии, шт:" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry x="1320" y="40" width="340" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-49" value="Коробок:" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry x="1320" y="169" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-50" value="Брак, шт:" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry x="1500" y="169" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-51" value="Произведено всего в партии:" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry x="1320" y="267" width="340" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-52" value="105" style="rounded=0;whiteSpace=wrap;html=1;fontSize=50;" vertex="1" parent="1">
+          <mxGeometry x="1320" y="320" width="160" height="51" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-53" value="Коробок:" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry x="1320" y="290" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-54" value="2100" style="rounded=0;whiteSpace=wrap;html=1;fontSize=50;" vertex="1" parent="1">
+          <mxGeometry x="1490" y="320" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-55" value="шт:" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry x="1495" y="290" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-56" value="СТОП" style="rounded=1;whiteSpace=wrap;html=1;fontSize=21;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="900" y="409" width="170" height="69" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-57" value="010.000.004.020" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="490" width="115" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-58" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="1354" y="495" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-59" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="1515" y="495" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-60" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="1580" y="495" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-61" value="IO" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="1550" y="490" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-62" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="1645" y="495" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-63" value="HR" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="1615" y="490" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-69" value="17.02.2024" style="rounded=0;whiteSpace=wrap;html=1;fontSize=38;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="974" y="311.5" width="233" height="67" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-71" value="Режим:" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="310" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-72" value="Молоко 3,5 % 1 л" style="rounded=0;whiteSpace=wrap;html=1;fontSize=27;fillColor=#FF6666;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="897" y="151" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-73" value="..." style="rounded=1;whiteSpace=wrap;html=1;fontSize=47;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="1216.5" y="151" width="72" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-74" value="17.02.2024" style="rounded=0;whiteSpace=wrap;html=1;fontSize=38;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="974" y="228" width="233" height="71" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-75" value="&amp;gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=47;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="1215" y="228" width="75" height="71" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-76" value="&amp;lt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=47;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="897" y="228" width="70" height="71" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-77" value="ПРОИЗВОДСТВО" style="rounded=0;whiteSpace=wrap;html=1;fontSize=21;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="897" y="70" width="310" height="61" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-78" value="..." style="rounded=1;whiteSpace=wrap;html=1;fontSize=47;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="1215" y="71" width="72" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-79" value="Режим:" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry x="897" y="40" width="310" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-81" value="ПРОИЗВОДСТВО" style="rounded=0;whiteSpace=wrap;html=1;fontSize=21;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="284.75" y="639.5" width="310" height="61" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-84" value="ОТБРАКОВКА" style="rounded=0;whiteSpace=wrap;html=1;fontSize=21;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="284.75" y="729.5" width="310" height="61" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-85" value="СМЕНА ДАТЫ" style="rounded=0;whiteSpace=wrap;html=1;fontSize=21;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="284.75" y="819.5" width="310" height="61" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-86" value="" style="rounded=0;whiteSpace=wrap;html=1;aspect=fixed;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" vertex="1" parent="1">
+          <mxGeometry x="39.5" y="1080" width="800" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-87" value="Выбор продукта" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="290.5" y="1090" width="299" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-88" value="Молоко 3,5 % 1 л" style="rounded=0;whiteSpace=wrap;html=1;fontSize=27;fillColor=#FF6666;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1130" width="246.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-94" value="Молоко 3,5 % 1 л" style="rounded=0;whiteSpace=wrap;html=1;fontSize=27;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="316.75" y="1130" width="246.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-95" value="Молоко 3,5 % 1 л" style="rounded=0;whiteSpace=wrap;html=1;fontSize=27;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="573.5" y="1130" width="246.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-96" value="Молоко 3,5 % 1 л" style="rounded=0;whiteSpace=wrap;html=1;fontSize=27;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="59.5" y="1200" width="246.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-97" value="Молоко 3,5 % 1 л" style="rounded=0;whiteSpace=wrap;html=1;fontSize=27;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="316.25" y="1200" width="246.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-98" value="Молоко 3,5 % 1 л" style="rounded=0;whiteSpace=wrap;html=1;fontSize=27;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="573" y="1200" width="246.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-99" value="Молоко 3,5 % 1 л" style="rounded=0;whiteSpace=wrap;html=1;fontSize=27;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="59.5" y="1270" width="246.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-100" value="Молоко 3,5 % 1 л" style="rounded=0;whiteSpace=wrap;html=1;fontSize=27;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="316.25" y="1270" width="246.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-101" value="Молоко 3,5 % 1 л" style="rounded=0;whiteSpace=wrap;html=1;fontSize=27;fillColor=#d80073;strokeColor=#A50040;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="573" y="1270" width="246.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-102" value="Молоко 3,5 % 1 л" style="rounded=0;whiteSpace=wrap;html=1;fontSize=27;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="59.5" y="1340" width="246.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-103" value="Молоко 3,5 % 1 л" style="rounded=0;whiteSpace=wrap;html=1;fontSize=27;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="316.25" y="1340" width="246.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-104" value="Молоко 3,5 % 1 л" style="rounded=0;whiteSpace=wrap;html=1;fontSize=27;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="573" y="1340" width="246.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-105" value="Молоко 3,5 % 1 л" style="rounded=0;whiteSpace=wrap;html=1;fontSize=27;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1410" width="246.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-106" value="Молоко 3,5 % 1 л" style="rounded=0;whiteSpace=wrap;html=1;fontSize=27;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="316.75" y="1410" width="246.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-107" value="Молоко 3,5 % 1 л" style="rounded=0;whiteSpace=wrap;html=1;fontSize=27;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="573.5" y="1410" width="246.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-108" value="Молоко 3,5 % 1 л" style="rounded=0;whiteSpace=wrap;html=1;fontSize=27;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="59.5" y="1480" width="246.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-109" value="Молоко 3,5 % 1 л" style="rounded=0;whiteSpace=wrap;html=1;fontSize=27;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="316.25" y="1480" width="246.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-110" value="Молоко 3,5 % 1 л" style="rounded=0;whiteSpace=wrap;html=1;fontSize=27;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="573" y="1480" width="246.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-111" value="ИНФОРМАЦИЯ" style="rounded=0;whiteSpace=wrap;html=1;fontSize=21;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="284.5" y="910" width="310" height="61" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-112" value="Информация" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1720" y="10" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-117" value="" style="rounded=0;whiteSpace=wrap;html=1;aspect=fixed;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="-480" width="800" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-118" value="Чтение камерой" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="-510" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-124" value="ОТБРАКОВКА" style="rounded=0;whiteSpace=wrap;html=1;fontSize=21;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="55.5" y="-450" width="310" height="61" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-125" value="РАБОТА" style="rounded=1;whiteSpace=wrap;html=1;fontSize=21;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="235.5" y="-129" width="210" height="69" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-126" value="A1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="35.5" y="-30" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-127" value="010.000.004.020" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="156.5" y="-30" width="115" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-128" value="v0.01.01" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="276.5" y="-30" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-129" value="010.000.004.020:3040" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="357.5" y="-30" width="155" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-130" value="20635" style="rounded=0;whiteSpace=wrap;html=1;fontSize=100;" vertex="1" parent="1">
+          <mxGeometry x="475.5" y="-361" width="340" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-131" value="105" style="rounded=0;whiteSpace=wrap;html=1;fontSize=50;" vertex="1" parent="1">
+          <mxGeometry x="475.5" y="-232" width="160" height="51" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-132" value="503" style="rounded=0;whiteSpace=wrap;html=1;fontSize=50;" vertex="1" parent="1">
+          <mxGeometry x="645.5" y="-232" width="170" height="51" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-133" value="Произведено на этой линиии, шт:" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry x="475.5" y="-391" width="340" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-134" value="Коробок:" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry x="475.5" y="-262" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-135" value="Брак, шт:" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry x="655.5" y="-262" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-136" value="Произведено всего в партии:" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry x="475.5" y="-164" width="340" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-137" value="105" style="rounded=0;whiteSpace=wrap;html=1;fontSize=50;" vertex="1" parent="1">
+          <mxGeometry x="475.5" y="-111" width="160" height="51" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-138" value="Коробок:" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry x="475.5" y="-141" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-139" value="2100" style="rounded=0;whiteSpace=wrap;html=1;fontSize=50;" vertex="1" parent="1">
+          <mxGeometry x="645.5" y="-111" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-140" value="шт:" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry x="650.5" y="-141" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-141" value="СТОП" style="rounded=1;whiteSpace=wrap;html=1;fontSize=21;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="55.5" y="-129" width="170" height="69" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-142" value="010.000.004.020" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="555.5" y="-30" width="115" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-143" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="509.5" y="-25" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-144" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="670.5" y="-25" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-145" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="735.5" y="-25" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-146" value="IO" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="705.5" y="-30" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-147" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="800.5" y="-25" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-148" value="HR" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="770.5" y="-30" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-151" value="Отбракован ранее" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="610" y="-450" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-152" value="Отбракован" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="475.5" y="-450" width="124.5" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-153" value="..." style="rounded=1;whiteSpace=wrap;html=1;fontSize=47;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="373.5" y="-449" width="72" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-154" value="Режим:" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry x="55.5" y="-480" width="310" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-155" value="Молоко 3,5 % 1 л" style="rounded=0;whiteSpace=wrap;html=1;fontSize=27;fillColor=#FF6666;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="55.5" y="-370" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-156" value="..." style="rounded=1;whiteSpace=wrap;html=1;fontSize=47;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="375" y="-370" width="72" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-157" value="17.02.2024" style="rounded=0;whiteSpace=wrap;html=1;fontSize=38;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="132.5" y="-293" width="233" height="71" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-158" value="&amp;gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=47;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="373.5" y="-293" width="75" height="71" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-159" value="&amp;lt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=47;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="55.5" y="-293" width="70" height="71" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-160" value="Не распознан" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="571" y="101" width="109" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-161" value="Не был произведен" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="475.5" y="-420" width="124.5" height="29" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-162" value="другой продукт" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="610" y="-419" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-163" value="другой продукт" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="690.5" y="101" width="109" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-164" value="РАБОТА" style="rounded=1;whiteSpace=wrap;html=1;fontSize=21;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="243" y="391" width="210" height="69" as="geometry" />
+        </mxCell>
+        <mxCell id="-ZcJLdMmA_inIKEtvDua-165" value="СТОП" style="rounded=1;whiteSpace=wrap;html=1;fontSize=21;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="63" y="391" width="170" height="69" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

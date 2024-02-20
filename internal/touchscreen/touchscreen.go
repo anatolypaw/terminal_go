@@ -124,7 +124,7 @@ func (t *Touchscreen) GetEvent() sgui.IEvent {
 			t.ptrig = false
 			t.pressed = true
 			scaled := scale(image.Point{X: x, Y: y})
-			log.Printf("Touch %v", scaled)
+			// log.Printf("Touch %v", scaled)
 			return sgui.EventTap{
 				Pos: scaled,
 			}

@@ -1,5 +1,5 @@
-github.com/anatolypaw/sgui v0.1.25 h1:NtkRYwtnidJJjOOErsviFUcwrG8kiGkDKjYYEjaWO5U=
-github.com/anatolypaw/sgui v0.1.25/go.mod h1:Jz58FzFfux69W5WwrKov9S5QnfURSvTaAzZQXaumdAg=
+github.com/anatolypaw/sgui v0.1.30 h1:97EZRb9LFC0r5boZt7qfK65Es6qeRQy+7b4bSOjuwaI=
+github.com/anatolypaw/sgui v0.1.30/go.mod h1:Jz58FzFfux69W5WwrKov9S5QnfURSvTaAzZQXaumdAg=
 github.com/srwiley/rasterx v0.0.0-20220730225603-2ab79fcdd4ef h1:Ch6Q+AZUxDBCVqdkI8FSpFyZDtCVBc2VmejdNrm5rRQ=
 github.com/srwiley/rasterx v0.0.0-20220730225603-2ab79fcdd4ef/go.mod h1:nXTWP6+gD5+LUJ8krVhhoeHjvHTutPxMYl5SvkcnJNE=
 golang.org/x/image v0.15.0 h1:kOELfmgrmJlw4Cdb7g/QGuB3CvDrXbqEIww/pNtNBm8=

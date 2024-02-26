@@ -16,7 +16,7 @@ func main() {
 	go app.Run()
 
 	gui := guiview.New(&app)
-	go gui.Run(&app)
+	go gui.Run()
 
 	<-exit
 }

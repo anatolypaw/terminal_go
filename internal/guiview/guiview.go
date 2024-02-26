@@ -16,12 +16,15 @@ type GuiView struct {
 	sgui  *sgui.Sgui
 	theme widget.ColorTheme
 
+	// Общие виджеты
+
 	// Экраны
-	ScreenProduceCamera *screenProduceCamera
-	screenSelectMode    *screenSelectMode
+	ScreenProduceCamera *sgui.Screen
+	ScreenSelectMode    *sgui.Screen
+	ScreenSelecGood     *sgui.Screen
 }
 
-func New(a *app.App) GuiView {
+func New(app *app.App) GuiView {
 	// Инициализируем фреймбуффер
 	fb, err := framebuffer.Open("/dev/fb0")
 	if err != nil {
@@ -63,27 +66,25 @@ func New(a *app.App) GuiView {
 	}
 
 	// Инциализируем экраны
-	gv.initScreenMain()
-	gv.initScreenSelectMode(a)
+	gv.ScreenProduceCamera = NewScreenMain(&gv, app)
+	gv.ScreenSelectMode = NewScreenSelectMode(&gv, app)
+	gv.ScreenSelecGood = NewScreenSelectGood(&gv, app)
 
 	return gv
 }
 
-func (v *GuiView) Run(a *app.App) {
-	v.sgui.SetScreen(v.ScreenProduceCamera.Screen)
-
+func (v *GuiView) Run() {
+	v.sgui.SetScreen(v.ScreenProduceCamera)
 	v.sgui.StartInputEventHandler()
 
 	// Обновляем данные в виджетах и делаем рендеринг
 	for {
-		v.ScreenProduceCamera.modeIndicator.SetState(a.I % 2)
-
 		start := time.Now()
 		v.sgui.Render()
 
 		since := time.Since(start)
 
-		if since > 10*time.Millisecond {
+		if since > 5*time.Millisecond {
 			log.Printf("Rendering  %v\n", since)
 		}
 

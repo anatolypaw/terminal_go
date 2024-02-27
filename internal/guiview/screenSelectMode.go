@@ -39,43 +39,47 @@ func NewScreenSelectMode(gv *GuiView, a *app.App) *sgui.Screen {
 
 	// Кнопка выбора режима производство
 	buttonProduceMode := *widget.NewButton(
-		widget.ButtonParam{
+		&widget.ButtonParam{
 			Size: image.Point{300, 60},
-			Onclick: func() {
+			OnClick: func() {
 				a.SetMode(app.MODE_PRODUCE)
 				gv.sgui.SetScreen(gv.ScreenProduceCamera)
 			},
-			Label:           "ПРОИЗВОДСТВО",
-			LabelSize:       30,
-			ReleaseColor:    color.RGBA{200, 255, 200, 255},
-			PressColor:      color.RGBA{110, 178, 140, 255},
-			BackgroundColor: gv.theme.BackgroundColor,
-			CornerRadius:    gv.theme.CornerRadius,
-			StrokeWidth:     gv.theme.StrokeWidth,
-			StrokeColor:     gv.theme.StrokeColor,
-			TextColor:       color.Black,
-		})
+			Text:             "ПРОИЗВОДСТВО",
+			TextSize:         30,
+			ReleaseFillColor: color.RGBA{200, 255, 200, 255},
+			PressFillColor:   color.RGBA{110, 178, 140, 255},
+			BackgroundColor:  gv.theme.BackgroundColor,
+			CornerRadius:     gv.theme.CornerRadius,
+			StrokeWidth:      gv.theme.StrokeWidth,
+			StrokeColor:      gv.theme.StrokeColor,
+			TextColor:        color.Black,
+		},
+		nil,
+	)
 
 	s.AddWidget(240, 100, &buttonProduceMode)
 
 	// Кнопка выбора режима отбраковки
 	buttonCancelMode := *widget.NewButton(
-		widget.ButtonParam{
+		&widget.ButtonParam{
 			Size: image.Point{300, 60},
-			Onclick: func() {
+			OnClick: func() {
 				a.SetMode(app.MODE_CANCEL)
 				gv.sgui.SetScreen(gv.ScreenProduceCamera)
 			},
-			Label:           "ОТБРАКОВКА",
-			LabelSize:       30,
-			ReleaseColor:    color.RGBA{208, 242, 253, 255},
-			PressColor:      color.RGBA{101, 183, 209, 255},
-			BackgroundColor: gv.theme.BackgroundColor,
-			CornerRadius:    gv.theme.CornerRadius,
-			StrokeWidth:     gv.theme.StrokeWidth,
-			StrokeColor:     gv.theme.StrokeColor,
-			TextColor:       color.Black,
-		})
+			Text:             "ОТБРАКОВКА",
+			TextSize:         30,
+			ReleaseFillColor: color.RGBA{208, 242, 253, 255},
+			PressFillColor:   color.RGBA{101, 183, 209, 255},
+			BackgroundColor:  gv.theme.BackgroundColor,
+			CornerRadius:     gv.theme.CornerRadius,
+			StrokeWidth:      gv.theme.StrokeWidth,
+			StrokeColor:      gv.theme.StrokeColor,
+			TextColor:        color.Black,
+		},
+		nil,
+	)
 	s.AddWidget(240, 200, &buttonCancelMode)
 
 	return &s

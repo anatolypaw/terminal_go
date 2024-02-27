@@ -84,7 +84,7 @@ func (v *GuiView) Run() {
 
 		since := time.Since(start)
 
-		if since > 5*time.Millisecond {
+		if since > 1*time.Millisecond {
 			log.Printf("Rendering  %v\n", since)
 		}
 

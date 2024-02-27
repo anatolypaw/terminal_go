@@ -61,21 +61,23 @@ func NewScreenMain(gv *GuiView, app *app.App) *sgui.Screen {
 	// Кнопка открытия экрана выбора режима.
 	// При нажатии открывает экран выбора режимов
 	modeMenu := *widget.NewButton(
-		widget.ButtonParam{
+		&widget.ButtonParam{
 			Size: image.Point{60, 60},
-			Onclick: func() {
+			OnClick: func() {
 				gv.sgui.SetScreen(gv.ScreenSelectMode)
 			},
-			Label:           "...",
-			LabelSize:       50,
-			ReleaseColor:    gv.theme.MainColor,
-			PressColor:      gv.theme.SecondColor,
-			BackgroundColor: gv.theme.BackgroundColor,
-			CornerRadius:    gv.theme.CornerRadius,
-			StrokeWidth:     gv.theme.StrokeWidth,
-			StrokeColor:     gv.theme.StrokeColor,
-			TextColor:       color.Black,
-		})
+			Text:             "...",
+			TextSize:         50,
+			ReleaseFillColor: gv.theme.MainColor,
+			PressFillColor:   gv.theme.SecondColor,
+			BackgroundColor:  gv.theme.BackgroundColor,
+			CornerRadius:     gv.theme.CornerRadius,
+			StrokeWidth:      gv.theme.StrokeWidth,
+			StrokeColor:      gv.theme.StrokeColor,
+			TextColor:        color.Black,
+		},
+		nil,
+	)
 
 	s.AddWidget(315, 40, &modeMenu)
 
@@ -116,21 +118,23 @@ func NewScreenMain(gv *GuiView, app *app.App) *sgui.Screen {
 	// Экран выбора продукта каждый раз создается новый
 	// так как необходимо генерировать кнопки выбора продукта
 	goodsMenu := *widget.NewButton(
-		widget.ButtonParam{
+		&widget.ButtonParam{
 			Size: image.Point{60, 60},
-			Onclick: func() {
+			OnClick: func() {
 				gv.sgui.SetScreen(gv.ScreenSelecGood)
 			},
-			Label:           "...",
-			LabelSize:       50,
-			ReleaseColor:    gv.theme.MainColor,
-			PressColor:      gv.theme.SecondColor,
-			BackgroundColor: gv.theme.BackgroundColor,
-			CornerRadius:    gv.theme.CornerRadius,
-			StrokeWidth:     gv.theme.StrokeWidth,
-			StrokeColor:     gv.theme.StrokeColor,
-			TextColor:       color.Black,
-		})
+			Text:             "...",
+			TextSize:         50,
+			ReleaseFillColor: gv.theme.MainColor,
+			PressFillColor:   gv.theme.SecondColor,
+			BackgroundColor:  gv.theme.BackgroundColor,
+			CornerRadius:     gv.theme.CornerRadius,
+			StrokeWidth:      gv.theme.StrokeWidth,
+			StrokeColor:      gv.theme.StrokeColor,
+			TextColor:        color.Black,
+		},
+		nil,
+	)
 
 	s.AddWidget(315, 110, &goodsMenu)
 

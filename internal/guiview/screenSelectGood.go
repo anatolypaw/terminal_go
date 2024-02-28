@@ -31,7 +31,7 @@ func NewScreenSelectGood(gv *GuiView, a *app.App) *sgui.Screen {
 	s.AddWidget(280, 10, textMode)
 
 	bparam := widget.ButtonParam{
-		Size:             image.Point{300, 60},
+		Size:             image.Point{300, 70},
 		OnClick:          nil,
 		Text:             "",
 		TextSize:         30,
@@ -47,15 +47,27 @@ func NewScreenSelectGood(gv *GuiView, a *app.App) *sgui.Screen {
 
 	for i, g := range a.Goods {
 		button := *widget.NewButton(
-			&bparam,
+			nil,
 			func() widget.ButtonParam {
+				if g.Gtin == "" {
+					bparam.Hidden = true
+					bparam.Text = "---"
+					return bparam
+				}
+				bparam.OnClick = func() {
+					a.SelectedGood = g
+					gv.sgui.SetScreen(gv.ScreenProduceCamera)
+				}
+
+				bparam.Hidden = false
 				bparam.Text = g.Desc
+				bparam.ReleaseFillColor = g.Color
 				return bparam
 			},
 		)
 
 		x := 60
-		y := 80*((i%5)+1) - 10
+		y := 85*((i%5)+1) - 25
 
 		if i > 4 {
 			x = 420

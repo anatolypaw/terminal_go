@@ -1,6 +1,7 @@
 package guiview
 
 import (
+	"fmt"
 	"image"
 	"image/color"
 	"terminal/internal/app"
@@ -82,32 +83,32 @@ func NewScreenMain(gv *GuiView, app *app.App) *sgui.Screen {
 	s.AddWidget(315, 40, &modeMenu)
 
 	// Индикатор выбранного продукта
+	indicatorParam := widget.LabelParam{
+		Size:            image.Point{300, 60},
+		Text:            "-----------",
+		TextSize:        30,
+		TextColor:       color.Black,
+		FillColor:       color.White,
+		BackgroundColor: gv.theme.BackgroundColor,
+		CornerRadius:    0,
+		StrokeWidth:     gv.theme.StrokeWidth,
+		StrokeColor:     gv.theme.StrokeColor,
+		Hidden:          false,
+	}
+
 	selectedProduct := *widget.NewLabel(nil,
 		func() widget.LabelParam {
 
-			param := widget.LabelParam{
-				Size:            image.Point{300, 60},
-				Text:            "-----------",
-				TextSize:        30,
-				TextColor:       color.Black,
-				FillColor:       color.White,
-				BackgroundColor: gv.theme.BackgroundColor,
-				CornerRadius:    0,
-				StrokeWidth:     gv.theme.StrokeWidth,
-				StrokeColor:     gv.theme.StrokeColor,
-				Hidden:          false,
-			}
-
 			good := app.SelectedGood
 
-			if good == nil {
-				return param
+			if good.Gtin == "" {
+				return indicatorParam
 			}
 
-			param.Text = good.Desc
-			param.FillColor = good.Color
+			indicatorParam.Text = good.Desc
+			indicatorParam.FillColor = good.Color
 
-			return param
+			return indicatorParam
 		},
 	)
 
@@ -137,6 +138,76 @@ func NewScreenMain(gv *GuiView, app *app.App) *sgui.Screen {
 	)
 
 	s.AddWidget(315, 110, &goodsMenu)
+
+	// Кнопка уменьшения даты
+	dateDown := *widget.NewButton(
+		nil,
+		func() widget.ButtonParam {
+			return widget.ButtonParam{
+				Size: image.Point{60, 60},
+				OnClick: func() {
+					app.DateDown()
+				},
+				Text:             "-",
+				TextSize:         50,
+				ReleaseFillColor: gv.theme.MainColor,
+				PressFillColor:   gv.theme.SecondColor,
+				BackgroundColor:  gv.theme.BackgroundColor,
+				CornerRadius:     gv.theme.CornerRadius,
+				StrokeWidth:      gv.theme.StrokeWidth,
+				StrokeColor:      gv.theme.StrokeColor,
+				TextColor:        color.Black,
+				Hidden:           !app.ModeIsProduce(),
+			}
+		},
+	)
+
+	s.AddWidget(10, 180, &dateDown)
+
+	// Кнопка увеличения даты
+	dateUp := *widget.NewButton(
+		nil,
+		func() widget.ButtonParam {
+			return widget.ButtonParam{
+				Size: image.Point{60, 60},
+				OnClick: func() {
+					app.DateUp()
+				},
+				Text:             "+",
+				TextSize:         50,
+				ReleaseFillColor: gv.theme.MainColor,
+				PressFillColor:   gv.theme.SecondColor,
+				BackgroundColor:  gv.theme.BackgroundColor,
+				CornerRadius:     gv.theme.CornerRadius,
+				StrokeWidth:      gv.theme.StrokeWidth,
+				StrokeColor:      gv.theme.StrokeColor,
+				TextColor:        color.Black,
+				Hidden:           !app.ModeIsProduce(),
+			}
+		},
+	)
+
+	s.AddWidget(315, 180, &dateUp)
+
+	//Дата производства
+	labelProduceDate := *widget.NewLabel(nil,
+		func() widget.LabelParam {
+			return widget.LabelParam{
+				Size:            image.Point{235, 60},
+				Text:            fmt.Sprintf("23.10.20%2d", app.Date),
+				TextSize:        40,
+				TextColor:       color.Black,
+				FillColor:       color.White,
+				BackgroundColor: gv.theme.BackgroundColor,
+				CornerRadius:    0,
+				StrokeWidth:     gv.theme.StrokeWidth,
+				StrokeColor:     gv.theme.StrokeColor,
+				Hidden:          !app.ModeIsProduce(),
+			}
+		},
+	)
+
+	s.AddWidget(75, 180, &labelProduceDate)
 
 	return &s
 }

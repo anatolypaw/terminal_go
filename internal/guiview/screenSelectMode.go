@@ -40,7 +40,7 @@ func NewScreenSelectMode(gv *GuiView, a *app.App) *sgui.Screen {
 	// Кнопка выбора режима производство
 	buttonProduceMode := *widget.NewButton(
 		&widget.ButtonParam{
-			Size: image.Point{300, 60},
+			Size: image.Point{300, 100},
 			OnClick: func() {
 				a.SetMode(app.MODE_PRODUCE)
 				gv.sgui.SetScreen(gv.ScreenProduceCamera)
@@ -63,7 +63,7 @@ func NewScreenSelectMode(gv *GuiView, a *app.App) *sgui.Screen {
 	// Кнопка выбора режима отбраковки
 	buttonCancelMode := *widget.NewButton(
 		&widget.ButtonParam{
-			Size: image.Point{300, 60},
+			Size: image.Point{300, 100},
 			OnClick: func() {
 				a.SetMode(app.MODE_CANCEL)
 				gv.sgui.SetScreen(gv.ScreenProduceCamera)
@@ -80,7 +80,7 @@ func NewScreenSelectMode(gv *GuiView, a *app.App) *sgui.Screen {
 		},
 		nil,
 	)
-	s.AddWidget(240, 200, &buttonCancelMode)
+	s.AddWidget(240, 240, &buttonCancelMode)
 
 	return &s
 

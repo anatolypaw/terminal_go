@@ -25,7 +25,9 @@ type App struct {
 	// 3 - Информация
 	Mode int
 
-	SelectedGood *Good
+	Date int
+
+	SelectedGood Good
 	Goods        [10]Good
 }
 
@@ -36,33 +38,35 @@ func New() App {
 func (a *App) Run() {
 	a.Goods[0] = Good{
 		Gtin:  "12313424",
-		Desc:  "Кефир",
-		Color: color.RGBA{100, 255, 100, 255},
+		Desc:  "Творог 330 0%",
+		Color: color.RGBA{200, 100, 100, 255},
 	}
 
 	a.Goods[1] = Good{
 		Gtin:  "12313424",
-		Desc:  "Молоко",
+		Desc:  "Творог 330 5%",
 		Color: color.RGBA{255, 255, 100, 255},
 	}
 
-	a.Goods[4] = Good{
+	a.Goods[2] = Good{
 		Gtin:  "12313424",
+		Desc:  "Творог 330 9%",
+		Color: color.RGBA{100, 100, 255, 255},
+	}
+
+	a.Goods[4] = Good{
+		Gtin:  "1231342ad4",
 		Desc:  "Йогурт",
 		Color: color.RGBA{100, 255, 255, 255},
 	}
 
+	a.Goods[8] = Good{
+		Gtin:  "12313424eqe",
+		Desc:  "Простокваша",
+		Color: color.RGBA{100, 255, 255, 255},
+	}
+
 	for {
-		a.SelectedGood = &Good{
-			Gtin:  "1231241412",
-			Desc:  "Молоко",
-			Color: color.RGBA{100, 100, 200, 255},
-		}
-
-		time.Sleep(1 * time.Second)
-
-		a.SelectedGood = nil
-
 		time.Sleep(1 * time.Second)
 	}
 }
@@ -73,4 +77,16 @@ func (a *App) SetMode(m int) {
 
 func (a *App) GetMode() int {
 	return a.Mode
+}
+
+func (a *App) DateDown() {
+	a.Date = a.Date - 1
+}
+
+func (a *App) DateUp() {
+	a.Date = a.Date + 1
+}
+
+func (a *App) ModeIsProduce() bool {
+	return a.Mode == MODE_PRODUCE
 }

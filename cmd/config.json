@@ -1,0 +1,14 @@
+{
+    "TouchCalib": {
+        "Done": false,
+        "Point_1": 0,
+        "Point_2": 0,
+        "Point_3": 0,
+        "Point_4": 0
+    },
+    "TerminalType": "camera",
+    "TerminalName": "TEST",
+    "O2i500Addr": "10.0.4.11:50010",
+    "SavemaAddr": "10.0.0.1",
+    "HubAddr": "10.0.4.20:3000"
+}

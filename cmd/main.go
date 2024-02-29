@@ -23,6 +23,8 @@ func main() {
 		"make-config",
 		false,
 		"Будет создан файл config.json конфигурации по умолчанию.")
+
+	noGuiFlag := flag.Bool("no-gui", false, "Запуск без GUI")
 	flag.Parse()
 
 	// Если указан параметр --make-config, создаем файл конфигурации по умолчанию
@@ -45,16 +47,18 @@ func main() {
 	log.Print("Конфигурация загружена")
 	_ = cfg
 
+	app := app.New()
+	go app.Run()
+
 	// Запускаем камеру
 	camera := o2i500.New()
 	go camera.Run(config.DefaultConfig.O2i500Addr)
 
-	app := app.New()
-	go app.Run()
-
 	// Запускаем графический интерфейс
-	gui := guiview.New(&app)
-	go gui.Run()
+	if !*noGuiFlag {
+		gui := guiview.New(&app, &camera)
+		go gui.Run()
+	}
 
 	<-exit
 }

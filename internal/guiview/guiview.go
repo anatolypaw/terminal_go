@@ -3,7 +3,6 @@ package guiview
 import (
 	"image/color"
 	"log"
-	o2i500 "terminal/internal/O2i500"
 	"terminal/internal/app"
 	"terminal/internal/framebuffer"
 	"terminal/internal/touchscreen"
@@ -25,29 +24,29 @@ type GuiView struct {
 	ScreenSelecGood     *sgui.Screen
 }
 
-func New(app *app.App, o2i500 *o2i500.O2i500) GuiView {
+func New(app *app.App) (GuiView, error) {
 	// Инициализируем фреймбуффер
 	fb, err := framebuffer.Open("/dev/fb0")
 	if err != nil {
-		log.Panic(err)
+		return GuiView{}, err
 	}
 
 	// Получаем смапленное в память фреймбуффера изображение
 	display, err := fb.Image()
 	if err != nil {
-		log.Panic(err)
+		return GuiView{}, err
 	}
 
 	// Получаем устройство ввода
 	touch, err := touchscreen.New("/dev/input/event0")
 	if err != nil {
-		log.Panic(err)
+		return GuiView{}, err
 	}
 
 	// Создаем GUI
 	gui, err := sgui.New(display, &touch)
 	if err != nil {
-		panic(err)
+		return GuiView{}, err
 	}
 
 	// Создаем тему
@@ -67,11 +66,11 @@ func New(app *app.App, o2i500 *o2i500.O2i500) GuiView {
 	}
 
 	// Инциализируем экраны
-	gv.ScreenProduceCamera = NewScreenMain(&gv, app, o2i500)
+	gv.ScreenProduceCamera = NewScreenMain(&gv, app)
 	gv.ScreenSelectMode = NewScreenSelectMode(&gv, app)
 	gv.ScreenSelecGood = NewScreenSelectGood(&gv, app)
 
-	return gv
+	return gv, nil
 }
 
 func (v *GuiView) Run() {

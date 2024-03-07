@@ -7,7 +7,6 @@ import (
 	"flag"
 	"log"
 	"os"
-	o2i500 "terminal/internal/O2i500"
 	"terminal/internal/app"
 	"terminal/internal/config"
 	"terminal/internal/guiview"
@@ -19,16 +18,12 @@ func main() {
 	configFileName := "config.json"
 
 	// Парсим флаги командной строки
-	makeConfigFlag := flag.Bool(
-		"make-config",
-		false,
-		"Будет создан файл config.json конфигурации по умолчанию.")
+	newConfigFlag := flag.Bool("deafult", false, "создать config.json конфигурации по умолчанию.")
 
-	noGuiFlag := flag.Bool("no-gui", false, "Запуск без GUI")
 	flag.Parse()
 
-	// Если указан параметр --make-config, создаем файл конфигурации по умолчанию
-	if *makeConfigFlag {
+	// Если указан параметр, создаем файл конфигурации по умолчанию
+	if *newConfigFlag {
 		err := config.Save(configFileName, config.DefaultConfig)
 		if err != nil {
 			log.Print("Ошибка при создании файла конфигурации:", err)
@@ -45,20 +40,17 @@ func main() {
 		return
 	}
 	log.Print("Конфигурация загружена")
-	_ = cfg
 
-	app := app.New()
+	app := app.New(cfg)
 	go app.Run()
 
-	// Запускаем камеру
-	camera := o2i500.New()
-	go camera.Run(config.DefaultConfig.O2i500Addr)
-
 	// Запускаем графический интерфейс
-	if !*noGuiFlag {
-		gui := guiview.New(&app, &camera)
+	gui, err := guiview.New(&app)
+	if err != nil {
+		log.Print("Невозможно запустить GUI: ", err)
+	} else {
 		go gui.Run()
+		log.Print("GUI запущен")
 	}
-
 	<-exit
 }

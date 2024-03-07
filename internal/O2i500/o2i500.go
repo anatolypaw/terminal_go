@@ -9,23 +9,28 @@ import (
 )
 
 type O2i500 struct {
+	Address        string
 	LastPacketTime time.Time
 	Connected      bool
+	LastError      error
 }
 
-func New() O2i500 {
+func New(address string) O2i500 {
 
-	return O2i500{}
+	return O2i500{
+		Address: address,
+	}
 }
 
-func (o *O2i500) Run(address string) {
+func (o *O2i500) Run() {
 	for {
 
 		// Установка соединения с сервером
-		log.Print("Установка соединения с камерой ", address)
-		conn, err := net.DialTimeout("tcp", address, 1000*time.Millisecond)
+		log.Print("Установка соединения с камерой ", o.Address)
+		conn, err := net.DialTimeout("tcp", o.Address, 1000*time.Millisecond)
 		if err != nil {
-			fmt.Println("Ошибка подключения:", err)
+			fmt.Println("Ошибка подключения к камере:", err)
+			time.Sleep(1000 * time.Millisecond)
 			continue
 		}
 		defer conn.Close()

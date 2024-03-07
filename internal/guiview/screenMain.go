@@ -4,14 +4,13 @@ import (
 	"fmt"
 	"image"
 	"image/color"
-	o2i500 "terminal/internal/O2i500"
 	"terminal/internal/app"
 
 	"github.com/anatolypaw/sgui"
 	"github.com/anatolypaw/sgui/widget"
 )
 
-func NewScreenMain(gv *GuiView, app *app.App, o2i500 *o2i500.O2i500) *sgui.Screen {
+func NewScreenMain(gv *GuiView, app *app.App) *sgui.Screen {
 	// Создаем экран
 	s := sgui.NewScreen(gv.sgui.SizeDisplay())
 
@@ -107,7 +106,7 @@ func NewScreenMain(gv *GuiView, app *app.App, o2i500 *o2i500.O2i500) *sgui.Scree
 			}
 
 			indicatorParam.Text = good.Desc
-			indicatorParam.FillColor = good.Color
+			indicatorParam.FillColor = gv.theme.MainColor
 
 			return indicatorParam
 		},
@@ -214,7 +213,7 @@ func NewScreenMain(gv *GuiView, app *app.App, o2i500 *o2i500.O2i500) *sgui.Scree
 	cameraConnectionStatusIndicator := *widget.NewIndicator(
 		15,
 		func() int {
-			if !o2i500.Connected {
+			if !app.Camera.Connected {
 				return 0
 			}
 			return 1

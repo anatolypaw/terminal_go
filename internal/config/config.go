@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
+	"terminal/internal/entity"
 )
 
 type TouchCalib struct {
@@ -16,21 +17,33 @@ type TouchCalib struct {
 
 type Config struct {
 	TouchCalib   TouchCalib // Калибровки тачскрина
-	TerminalType string     // Тип терминала. Камера или нанесение
 	TerminalName string     // Имя терминала
-	O2i500Addr   string     // Адрес камеры O2I500
-	SavemaAddr   string     // Адрес савемы
-	HubAddr      string     // Адрес и порт хаба
+	TerminalType string     // Тип терминала. reading printing
+
+	UseCamera  bool
+	O2i500Addr string // Адрес камеры O2I500
+
+	UseHandReader bool
+
+	UseSavema  bool
+	SavemaAddr string // Адрес савемы
+	HubAddr    string // Адрес и порт хаба
+
+	Goods [10]entity.Good
 }
 
 // Значения по умолчанию для конфигурации
 var DefaultConfig = Config{
 	TouchCalib:   TouchCalib{},
 	TerminalName: "TEST",
-	TerminalType: "camera",
+	TerminalType: "printing",
+	UseCamera:    false,
 	O2i500Addr:   "10.0.4.11:50010",
-	SavemaAddr:   "10.0.0.1",
-	HubAddr:      "10.0.4.20:3000",
+
+	UseHandReader: true,
+	UseSavema:     true,
+	SavemaAddr:    "10.0.0.1",
+	HubAddr:       "10.0.4.20:3000",
 }
 
 // Функция для загрузки конфигурации из файла
@@ -54,7 +67,7 @@ func Load(filename string) (Config, error) {
 		return Config{}, fmt.Errorf("не указано имя терминала")
 	}
 
-	if config.TerminalType != "camera" {
+	if config.TerminalType != "reading" && config.TerminalType != "printing" {
 		return Config{}, fmt.Errorf("недопустимый тип терминала")
 	}
 

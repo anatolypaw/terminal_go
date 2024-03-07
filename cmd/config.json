@@ -6,9 +6,64 @@
         "Point_3": 0,
         "Point_4": 0
     },
-    "TerminalType": "camera",
     "TerminalName": "TEST",
+    "TerminalType": "printing",
+    "UseCamera": false,
     "O2i500Addr": "10.0.4.11:50010",
+    "UseHandReader": true,
+    "UseSavema": true,
     "SavemaAddr": "10.0.0.1",
-    "HubAddr": "10.0.4.20:3000"
+    "HubAddr": "10.0.4.20:3000",
+    "Goods": [
+        {
+            "gtin": "",
+            "desc": "",
+            "life": 0
+        },
+        {
+            "gtin": "",
+            "desc": "",
+            "life": 0
+        },
+        {
+            "gtin": "",
+            "desc": "",
+            "life": 0
+        },
+        {
+            "gtin": "",
+            "desc": "",
+            "life": 0
+        },
+        {
+            "gtin": "",
+            "desc": "",
+            "life": 0
+        },
+        {
+            "gtin": "",
+            "desc": "",
+            "life": 0
+        },
+        {
+            "gtin": "",
+            "desc": "",
+            "life": 0
+        },
+        {
+            "gtin": "",
+            "desc": "",
+            "life": 0
+        },
+        {
+            "gtin": "",
+            "desc": "",
+            "life": 0
+        },
+        {
+            "gtin": "",
+            "desc": "",
+            "life": 0
+        }
+    ]
 }

@@ -45,7 +45,7 @@ func NewScreenSelectGood(gv *GuiView, a *app.App) *sgui.Screen {
 		Hidden:           false,
 	}
 
-	for i, g := range a.Goods {
+	for i, g := range a.Cfg.Goods {
 		button := *widget.NewButton(
 			nil,
 			func() widget.ButtonParam {
@@ -61,7 +61,7 @@ func NewScreenSelectGood(gv *GuiView, a *app.App) *sgui.Screen {
 
 				bparam.Hidden = false
 				bparam.Text = g.Desc
-				bparam.ReleaseFillColor = g.Color
+				bparam.ReleaseFillColor = gv.theme.MainColor
 				return bparam
 			},
 		)

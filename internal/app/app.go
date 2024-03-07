@@ -1,7 +1,10 @@
 package app
 
 import (
-	"image/color"
+	o2i500 "terminal/internal/O2i500"
+	"terminal/internal/config"
+	"terminal/internal/entity"
+	"terminal/internal/hub"
 	"time"
 )
 
@@ -11,60 +14,36 @@ const (
 	MODE_CANCEL
 )
 
-type Good struct {
-	Gtin  string
-	Desc  string
-	Color color.Color
-}
-
 type App struct {
-	// Режим работы
-	// 0 - Производство
-	// 1 - Отбраковка
-	// 2 - Смена даты
-	// 3 - Информация
-	Mode int
+	Cfg config.Config
+	Hub hub.Hub
 
-	Date int
+	Camera o2i500.O2i500
 
-	SelectedGood Good
-	Goods        [10]Good
+	Mode         int
+	Date         int
+	SelectedGood entity.Good
 }
 
-func New() App {
-	return App{}
+func New(cfg config.Config) App {
+	return App{
+		Cfg: cfg,
+	}
 }
 
 func (a *App) Run() {
-	a.Goods[0] = Good{
-		Gtin:  "12313424",
-		Desc:  "Творог 330 0%",
-		Color: color.RGBA{200, 100, 100, 255},
+
+	/* Инициализируем используемые устройства */
+	if a.Cfg.UseCamera {
+		a.Camera = o2i500.New(a.Cfg.O2i500Addr)
+		a.Camera.Run()
 	}
 
-	a.Goods[1] = Good{
-		Gtin:  "12313424",
-		Desc:  "Творог 330 5%",
-		Color: color.RGBA{255, 255, 100, 255},
-	}
+	/* Создаем подключение к хабу */
+	a.Hub = hub.New(a.Cfg.HubAddr)
+	go a.Hub.Run()
 
-	a.Goods[2] = Good{
-		Gtin:  "12313424",
-		Desc:  "Творог 330 9%",
-		Color: color.RGBA{100, 100, 255, 255},
-	}
-
-	a.Goods[4] = Good{
-		Gtin:  "1231342ad4",
-		Desc:  "Йогурт",
-		Color: color.RGBA{100, 255, 255, 255},
-	}
-
-	a.Goods[8] = Good{
-		Gtin:  "12313424eqe",
-		Desc:  "Простокваша",
-		Color: color.RGBA{100, 255, 255, 255},
-	}
+	a.Hub.GetCodeForPrint(a.Cfg.TerminalName, "00000000000000")
 
 	for {
 		time.Sleep(1 * time.Second)

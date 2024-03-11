@@ -43,7 +43,7 @@ var DefaultConfig = Config{
 	UseHandReader: true,
 	UseSavema:     true,
 	SavemaAddr:    "10.0.0.1",
-	HubAddr:       "10.0.4.20:3000",
+	HubAddr:       "10.0.4.20:3100",
 }
 
 // Функция для загрузки конфигурации из файла

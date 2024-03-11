@@ -18,7 +18,7 @@ func main() {
 	configFileName := "config.json"
 
 	// Парсим флаги командной строки
-	newConfigFlag := flag.Bool("deafult", false, "создать config.json конфигурации по умолчанию.")
+	newConfigFlag := flag.Bool("default", false, "создать config.json конфигурации по умолчанию.")
 
 	flag.Parse()
 

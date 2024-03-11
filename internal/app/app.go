@@ -32,18 +32,15 @@ func New(cfg config.Config) App {
 }
 
 func (a *App) Run() {
+	/* Создаем подключение к хабу */
+	a.Hub = hub.New(a.Cfg.HubAddr, a.Cfg.TerminalName)
+	go a.Hub.Run()
 
 	/* Инициализируем используемые устройства */
 	if a.Cfg.UseCamera {
 		a.Camera = o2i500.New(a.Cfg.O2i500Addr)
 		a.Camera.Run()
 	}
-
-	/* Создаем подключение к хабу */
-	a.Hub = hub.New(a.Cfg.HubAddr)
-	go a.Hub.Run()
-
-	a.Hub.GetCodeForPrint(a.Cfg.TerminalName, "00000000000000")
 
 	for {
 		time.Sleep(1 * time.Second)

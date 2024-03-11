@@ -13,7 +13,7 @@
     "UseHandReader": true,
     "UseSavema": true,
     "SavemaAddr": "10.0.0.1",
-    "HubAddr": "10.0.4.20:3000",
+    "HubAddr": "localhost:3100",
     "Goods": [
         {
             "gtin": "",

@@ -9,7 +9,10 @@ import (
 )
 
 type O2i500 struct {
-	Address        string
+	Address string
+
+	// Время, когда был получен последний пакет. так можно отследить, не умерло
+	// ли соединение
 	LastPacketTime time.Time
 	Connected      bool
 	LastError      error

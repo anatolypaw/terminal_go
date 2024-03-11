@@ -10,4 +10,5 @@
 .vscode
 
 ./cmd/main
+./cmd/serv.sh
 ./pkg

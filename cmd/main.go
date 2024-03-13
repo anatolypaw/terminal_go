@@ -12,6 +12,8 @@ import (
 	"terminal/internal/guiview"
 )
 
+const version = "0.0.1"
+
 func main() {
 	exit := make(chan os.Signal, 1)
 
@@ -19,7 +21,6 @@ func main() {
 
 	// Парсим флаги командной строки
 	newConfigFlag := flag.Bool("default", false, "создать config.json конфигурации по умолчанию.")
-
 	flag.Parse()
 
 	// Если указан параметр, создаем файл конфигурации по умолчанию
@@ -33,13 +34,15 @@ func main() {
 		return
 	}
 
+	log.Print("version ", version)
+
 	// Загрузка конфигурации из файла
 	cfg, err := config.Load(configFileName)
 	if err != nil {
 		log.Print("Ошибка загрузки конфигурации: ", err)
 		return
 	}
-	log.Print("Конфигурация загружена")
+	log.Printf("Конфигурация загружена, тип: %s, имя: %s", cfg.TerminalType, cfg.TerminalName)
 
 	app := app.New(cfg)
 	go app.Run()

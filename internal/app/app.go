@@ -1,10 +1,12 @@
 package app
 
 import (
-	o2i500 "terminal/internal/O2i500"
+	"log"
 	"terminal/internal/config"
 	"terminal/internal/entity"
 	"terminal/internal/hub"
+	"terminal/internal/o2i500"
+	"terminal/internal/savema"
 	"time"
 )
 
@@ -18,7 +20,8 @@ type App struct {
 	Cfg config.Config
 	Hub hub.Hub
 
-	Camera o2i500.O2i500
+	Camera  o2i500.O2i500
+	Printer savema.Savema
 
 	Mode         int
 	Date         int
@@ -38,8 +41,15 @@ func (a *App) Run() {
 
 	/* Инициализируем используемые устройства */
 	if a.Cfg.UseCamera {
+		log.Print("Используется камера", a.Cfg.O2i500Addr)
 		a.Camera = o2i500.New(a.Cfg.O2i500Addr)
-		a.Camera.Run()
+		go a.Camera.Run()
+	}
+
+	if a.Cfg.UseSavema {
+		log.Print("Используется savema: ", a.Cfg.SavemaAddr)
+		a.Printer = savema.New(a.Cfg.SavemaAddr)
+		go a.Printer.Run()
 	}
 
 	for {

@@ -45,7 +45,7 @@ func NewScreenSelectGood(gv *GuiView, a *app.App) *sgui.Screen {
 		Hidden:           false,
 	}
 
-	for i, g := range a.Cfg.Goods {
+	for i, g := range a.Cfg.P.Goods {
 		button := *widget.NewButton(
 			nil,
 			func() widget.ButtonParam {

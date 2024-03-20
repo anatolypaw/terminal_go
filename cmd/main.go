@@ -23,9 +23,13 @@ func main() {
 	newConfigFlag := flag.Bool("default", false, "создать config.json конфигурации по умолчанию.")
 	flag.Parse()
 
+	// Создаем конфиг
+	cfg := config.New(configFileName)
+
 	// Если указан параметр, создаем файл конфигурации по умолчанию
 	if *newConfigFlag {
-		err := config.Save(configFileName, config.DefaultConfig)
+		cfg.P = config.DefaultConfig
+		err := cfg.Save()
 		if err != nil {
 			log.Print("Ошибка при создании файла конфигурации:", err)
 			return
@@ -37,14 +41,15 @@ func main() {
 	log.Print("version ", version)
 
 	// Загрузка конфигурации из файла
-	cfg, err := config.Load(configFileName)
+	err := cfg.Load()
 	if err != nil {
 		log.Print("Ошибка загрузки конфигурации: ", err)
 		return
 	}
-	log.Printf("Конфигурация загружена, тип: %s, имя: %s", cfg.TerminalType, cfg.TerminalName)
+	log.Printf("Конфигурация загружена, тип: %s, имя: %s", cfg.P.TerminalType, cfg.P.TerminalName)
 
-	app := app.New(cfg)
+	// Бизнес логика
+	app := app.New(&cfg)
 	go app.Run()
 
 	// Запускаем графический интерфейс
@@ -55,5 +60,6 @@ func main() {
 		go gui.Run()
 		log.Print("GUI запущен")
 	}
+
 	<-exit
 }

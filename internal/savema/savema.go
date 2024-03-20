@@ -74,9 +74,18 @@ func (s *Savema) Run() {
 		// Запускаем чтение сообщений от принтера
 		go s.read()
 
-		fmt.Println(s.Send("SPGGSN", "")) // Вывести серийный номер
+		fmt.Println(s.Send("SPGGSN", "")) // Включить отчет о печати
 
-		fmt.Println(s.Send("SPCSPM", "1>PRINTED")) // Включить отчет о печати
+		go func() {
+			for {
+				res, t, err := s.Send("SPCSPM", "1>PRINTED")
+				if err != nil {
+					fmt.Println(err)
+				}
+				fmt.Println(t, res) // Вывести серийный номер
+				time.Sleep(1 * time.Second)
+			}
+		}()
 
 		// Ждем, пока не случится ошибка обмена данными с савемой.
 		// Если произойдет, перезапускаем соединение
@@ -147,7 +156,7 @@ func (s *Savema) Send(command string, value string) (string, time.Duration, erro
 
 	// Делаем задержку между отправками, иначе принтер не примет сообщение
 	const delay = 10 * time.Millisecond    // Задержка между отправкой пакетов
-	const timeout = 100 * time.Millisecond // Таймаут получения ответа на запрос
+	const timeout = 200 * time.Millisecond // Таймаут получения ответа на запрос
 
 	nextTime := s.lastSendtime.Add(delay)
 	time.Sleep(time.Until(nextTime))

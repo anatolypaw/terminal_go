@@ -17,7 +17,7 @@ const (
 )
 
 type App struct {
-	Cfg config.Config
+	Cfg *config.Config
 	Hub hub.Hub
 
 	Camera  o2i500.O2i500
@@ -28,27 +28,28 @@ type App struct {
 	SelectedGood entity.Good
 }
 
-func New(cfg config.Config) App {
+func New(cfg *config.Config) App {
 	return App{
 		Cfg: cfg,
 	}
 }
 
 func (a *App) Run() {
+	log.Print("Запуск бизнес логики")
 	/* Создаем подключение к хабу */
-	a.Hub = hub.New(a.Cfg.HubAddr, a.Cfg.TerminalName)
+	a.Hub = hub.New(a.Cfg.P.HubAddr, a.Cfg.P.TerminalName)
 	go a.Hub.Run()
 
 	/* Инициализируем используемые устройства */
-	if a.Cfg.UseCamera {
-		log.Print("Используется камера", a.Cfg.O2i500Addr)
-		a.Camera = o2i500.New(a.Cfg.O2i500Addr)
+	if a.Cfg.P.UseCamera {
+		log.Print("Используется камера", a.Cfg.P.O2i500Addr)
+		a.Camera = o2i500.New(a.Cfg.P.O2i500Addr)
 		go a.Camera.Run()
 	}
 
-	if a.Cfg.UseSavema {
-		log.Print("Используется savema: ", a.Cfg.SavemaAddr)
-		a.Printer = savema.New(a.Cfg.SavemaAddr)
+	if a.Cfg.P.UseSavema {
+		log.Print("Используется savema: ", a.Cfg.P.SavemaAddr)
+		a.Printer = savema.New(a.Cfg.P.SavemaAddr)
 		go a.Printer.Run()
 	}
 

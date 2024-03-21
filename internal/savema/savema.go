@@ -60,11 +60,11 @@ func New(address string) Savema {
 func (s *Savema) Run() {
 	for {
 		s.Online = false
-		log.Print("Установка соединения с принтером ", s.Address)
+		//log.Print("Установка соединения с принтером ", s.Address)
 		err := s.connect()
 		if err != nil {
 			// Если не удается установить соединение, прервать цикл и повторить попытку.
-			log.Print("Ошибка подключения к принтеру:", err)
+			//	log.Print("Ошибка подключения к принтеру:", err)
 			time.Sleep(1000 * time.Millisecond)
 			continue
 		}

@@ -16,9 +16,11 @@ type GuiView struct {
 	sgui  *sgui.Sgui
 	theme widget.ColorTheme
 
+	touch *touchscreen.Touchscreen
 	// Общие виджеты
 
 	// Экраны
+	ScreenTouchCalib    *sgui.Screen
 	ScreenProduceCamera *sgui.Screen
 	ScreenSelectMode    *sgui.Screen
 	ScreenSelecGood     *sgui.Screen
@@ -63,9 +65,11 @@ func New(app *app.App) (GuiView, error) {
 	gv := GuiView{
 		sgui:  &gui,
 		theme: theme,
+		touch: &touch,
 	}
 
 	// Инциализируем экраны
+	gv.ScreenTouchCalib = NewScreenTouchCalib(&gv, app)
 	gv.ScreenProduceCamera = NewScreenMain(&gv, app)
 	gv.ScreenSelectMode = NewScreenSelectMode(&gv, app)
 	gv.ScreenSelecGood = NewScreenSelectGood(&gv, app)
@@ -74,7 +78,10 @@ func New(app *app.App) (GuiView, error) {
 }
 
 func (v *GuiView) Run() {
-	v.sgui.SetScreen(v.ScreenProduceCamera)
+	// Сначала Переходим на экран калибровки тачскрина
+	// Внутри этого экрана происходит проверка на наличие калибровки
+	// Если она есть, то переключает на другой, зависящий от режима экран
+	v.sgui.SetScreen(v.ScreenTouchCalib)
 	v.sgui.StartInputEventHandler()
 
 	// Обновляем данные в виджетах и делаем рендеринг

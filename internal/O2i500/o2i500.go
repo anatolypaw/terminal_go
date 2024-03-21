@@ -32,7 +32,7 @@ func (o *O2i500) Run() {
 		log.Print("Установка соединения с камерой ", o.Address)
 		conn, err := net.DialTimeout("tcp", o.Address, 1000*time.Millisecond)
 		if err != nil {
-			fmt.Println("Ошибка подключения к камере:", err)
+			//	fmt.Println("Ошибка подключения к камере:", err)
 			time.Sleep(1000 * time.Millisecond)
 			continue
 		}
